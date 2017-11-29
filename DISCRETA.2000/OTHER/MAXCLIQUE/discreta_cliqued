@@ -1,0 +1,5 @@
+#!/bin/sh
+group2graph $1 $2 $3 <$4 >infile
+wclique infile 
+rm infile 
+echo "finished."

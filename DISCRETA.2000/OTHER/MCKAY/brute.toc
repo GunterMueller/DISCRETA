@@ -1,0 +1,3 @@
+\endgraf \tocnormaltype The main program\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 1}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptMain program\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 1}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptsolproc\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 5}\hss }\endgraf 

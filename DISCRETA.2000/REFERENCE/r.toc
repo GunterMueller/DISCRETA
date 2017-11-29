@@ -1,0 +1,56 @@
+\contentsline {chapter}{\numberline {1}Basic Routines, Files, I/O etc.}{1}
+\contentsline {section}{\numberline {1.1}{\tt discreta.h}}{1}
+\contentsline {section}{\numberline {1.2}{\tt discreta.C}}{4}
+\contentsline {section}{\numberline {1.3}{\tt os.C}}{6}
+\contentsline {section}{\numberline {1.4}{\tt iof.C}}{8}
+\contentsline {section}{\numberline {1.5}{\tt nu.C}}{10}
+\contentsline {chapter}{\numberline {2}Some Scalar Data Types}{13}
+\contentsline {section}{\numberline {2.1}{\tt in1.C}}{13}
+\contentsline {chapter}{\numberline {3}Permutations and Partitions}{17}
+\contentsline {section}{\numberline {3.1}{\tt perm.C}}{17}
+\contentsline {section}{\numberline {3.2}{\tt perm2.C}}{18}
+\contentsline {section}{\numberline {3.3}{\tt part.C}}{20}
+\contentsline {chapter}{\numberline {4}Vectors, Lists and Matrices}{23}
+\contentsline {section}{\numberline {4.1}{\tt vec.C}}{23}
+\contentsline {section}{\numberline {4.2}{\tt ma.C}}{28}
+\contentsline {chapter}{\numberline {5}Permutation Groups}{33}
+\contentsline {section}{\numberline {5.1}{\tt perm\_grp.C}}{33}
+\contentsline {section}{\numberline {5.2}{\tt perm\_grp2.C}}{36}
+\contentsline {section}{\numberline {5.3}{\tt fga.C}}{36}
+\contentsline {section}{\numberline {5.4}{\tt lb.C}}{39}
+\contentsline {section}{\numberline {5.5}{\tt lb\_base\_change.C}}{42}
+\contentsline {chapter}{\numberline {6}Polynomials}{43}
+\contentsline {section}{\numberline {6.1}{\tt poly.C}}{43}
+\contentsline {subsection}{\numberline {6.1.1}Cycle-Indices}{44}
+\contentsline {section}{\numberline {6.2}{\tt mon.C}}{46}
+\contentsline {section}{\numberline {6.3}{\tt unip.C}}{47}
+\contentsline {chapter}{\numberline {7}Finite Fields}{49}
+\contentsline {section}{\numberline {7.1}{\tt gfq.h}}{49}
+\contentsline {section}{\numberline {7.2}{\tt gfq\_zech.C}}{50}
+\contentsline {section}{\numberline {7.3}{\tt gfq\_nb.C}}{55}
+\contentsline {section}{\numberline {7.4}{\tt singer.C}}{57}
+\contentsline {chapter}{\numberline {8}Linear Groups}{61}
+\contentsline {section}{\numberline {8.1}{\tt perm\_rep.C}}{61}
+\contentsline {section}{\numberline {8.2}{\tt gfq\_sz.C}}{63}
+\contentsline {section}{\numberline {8.3}{\tt gfq\_psu.C}}{63}
+\contentsline {chapter}{\numberline {9}Linear Codes}{65}
+\contentsline {section}{\numberline {9.1}{\tt bch.C}}{65}
+\contentsline {section}{\numberline {9.2}{\tt mindist.C}}{66}
+\contentsline {chapter}{\numberline {10}Double Cosets and Designs}{69}
+\contentsline {section}{\numberline {10.1}{\tt ladder\_info.C}}{69}
+\contentsline {section}{\numberline {10.2}{\tt ladder.C}}{70}
+\contentsline {section}{\numberline {10.3}{\tt ladder2.C}}{71}
+\contentsline {section}{\numberline {10.4}{\tt kramer\_mesner.C}}{72}
+\contentsline {section}{\numberline {10.5}{\tt plesken.C}}{76}
+\contentsline {section}{\numberline {10.6}{\tt intersection.C}}{77}
+\contentsline {section}{\numberline {10.7}{\tt intersection\_aijk.C}}{79}
+\contentsline {section}{\numberline {10.8}{\tt parameter.C}}{79}
+\contentsline {section}{\numberline {10.9}{\tt report.C}}{83}
+\contentsline {section}{\numberline {10.10}{\tt graphical.C}}{84}
+\contentsline {section}{\numberline {10.11}{\tt mathieu.C}}{84}
+\contentsline {section}{\numberline {10.12}{\tt dc\_draw.C}}{85}
+\contentsline {section}{\numberline {10.13}{\tt solid.C}}{85}
+\contentsline {chapter}{\numberline {11}Finite Incidence Geometries}{87}
+\contentsline {section}{\numberline {11.1}{\tt ma\_geo.C}}{87}
+\contentsline {chapter}{\numberline {12}Graphics}{91}
+\contentsline {section}{\numberline {12.1}{\tt vdi.C}}{91}

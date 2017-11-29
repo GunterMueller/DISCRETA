@@ -1,0 +1,6901 @@
+module 'XApplication'
+version = 46;
+applicationName = 'XApplication';
+sourceDirectory = '/home/btm2xp/anton/DISCRETA.2000/MAIN/';
+generateNameCPPMainProgram = 'discreta.C';
+generateNameCPP = * 'interface.C';
+generateNameCPPStubs = * 'discreta_stubs.C';
+generateNameCPPExterns = * 'discreta.h';
+generateNameResDB = * 'discreta.res';
+generateNameCPixmaps = 'discreta_pixmaps.h';
+generateCPPHeaderFile = 'discreta.h';
+generateNameMakefile = 'makefile';
+generateGlobalFunctions = 0;
+generateMask = 65548;
+useMask = 1;
+ansiC = 1;
+generateNewMakefile = 1;
+generateMakeTemplate = 0;
+useCPixmaps = 0;
+useUILPixmaps = 0;
+useCHeaders = 0;
+useCUILHeaders = 0;
+CPPFlavour = 0;
+useCPPHeaders = 1;
+useCPPHeadersMFCWindows = 0;
+useCPPHeadersMFCMotif = 0;
+value
+	'courier' : font ( '-*-courier-medium-r-*-*-14-*-*-*-*-*-*-*', charset ( 'FONTLIST_DEFAULT_TAG_STRING' ) );
+	'bfont' : font ( '-adobe-helvetica-bold-r-normal--20-140-100-100-p-105-iso8859-1', charset ( 'FONTLIST_DEFAULT_TAG_STRING' ) );
+	'fontlist1' : font ( '-adobe-helvetica-bold-r-normal--20-140-100-100-p-105-iso8859-1', charset ( 'FONTLIST_DEFAULT_TAG_STRING' ) );
+	'color3' : color ( 'wheat2' );
+	'color2' : color ( 'royalblue4' );
+	'color1' : color ( 'wheat1' );
+object 'Archimed_shell' : XmDialogShell {
+	arguments {
+	name = 'Archimed_shell';
+	lastGenName = 'Archimed_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_Archimed_shell (Widget parent)
+';
+	managed = false;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle =  * 'regular solid';
+	};
+object 'Archimed_form_outer' : XmForm {
+	arguments {
+	name = 'archimed_form_outer';
+	lastGenName = 'Archimed_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '5' : XmFrame {
+	arguments {
+	name = 'LIN_frame';
+	lastGenName = 'frame5';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '75' : XmForm {
+	arguments {
+	name = 'LIN_frame_form';
+	lastGenName = 'form75';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '70' : XmLabel {
+	arguments {
+	name = 'LIN_label';
+	lastGenName = 'label70';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'regular solids:';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '61' : XmForm {
+	arguments {
+	lastGenName = 'form61';
+	};
+object '1' : XmFrame {
+	arguments {
+	lastGenName = 'frame1';
+	};
+object '16' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol16';
+	XmNbackground = 'color1';
+	XmNorientation = 2;
+	};
+object '17' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol17';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object 'To_tetra' : XmToggleButton {
+	arguments {
+	name = 'Tetrahedron';
+	lastGenName = 'To_tetra';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Tetrahedron';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)0 )
+';
+	};
+};
+object 'To_cube' : XmToggleButton {
+	arguments {
+	name = 'Cube';
+	lastGenName = 'To_cube';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Cube';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)1 )
+';
+	};
+};
+object 'To_octa' : XmToggleButton {
+	arguments {
+	name = 'Octahedron';
+	lastGenName = 'To_octa';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Octahedron';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)2 )
+';
+	};
+};
+object 'To_dode' : XmToggleButton {
+	arguments {
+	name = 'Dodecahedron';
+	lastGenName = 'To_dode';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Dodecahedron';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)3 )
+';
+	};
+};
+object 'To_ico' : XmToggleButton {
+	arguments {
+	name = 'Icosahedron';
+	lastGenName = 'To_ico';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Icosahedron';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)4 )
+';
+	};
+};
+object 'To_cube4d' : XmToggleButton {
+	arguments {
+	name = 'to_cube4d';
+	lastGenName = 'To_cube4d';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Cube 4D';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)5 )
+';
+	};
+};
+object 'To_cubus_simus' : XmToggleButton {
+	arguments {
+	name = 'to_cubus_simus';
+	lastGenName = 'To_cubus_simus';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Cubus Simus';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)6 )
+';
+	};
+};
+object 'To_dode_simum' : XmToggleButton {
+	arguments {
+	name = 'to_dode_simum';
+	lastGenName = 'To_dode_simum';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Dode Simum';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)7 )
+';
+	};
+};
+object 'To_cube_ee' : XmToggleButton {
+	arguments {
+	name = 'to_cube_ee';
+	lastGenName = 'To_cube_ee';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Cubus EE';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)8 )
+';
+	};
+};
+object 'To_cube_ee_russian' : XmToggleButton {
+	arguments {
+	name = 'to_cube_ee_russian';
+	lastGenName = 'To_cube_ee_russian';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Cubus EE (russian)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)9 )
+';
+	};
+};
+};
+object '18' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol18';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object 'To_dual' : XmToggleButton {
+	arguments {
+	name = 'dual';
+	lastGenName = 'To_dual';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'dual';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)10 )
+';
+	};
+};
+object 'To_trunc' : XmToggleButton {
+	arguments {
+	name = 'truncate';
+	lastGenName = 'To_trunc';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'truncate';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)11 )
+';
+	};
+};
+object 'To_truncdode' : XmToggleButton {
+	arguments {
+	name = 'truncate_dode';
+	lastGenName = 'To_truncdode';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'truncate (dodecahedron)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)12 )
+';
+	};
+};
+object 'To_trunccube' : XmToggleButton {
+	arguments {
+	name = 'truncate_cube';
+	lastGenName = 'To_trunccube';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'truncate (cube)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)13 )
+';
+	};
+};
+object 'To_midpoints_of_edges' : XmToggleButton {
+	arguments {
+	name = 'to_midpoints_of_edges';
+	lastGenName = 'To_midpoints_of_edges';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'midpoints of edges';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)14 )
+';
+	};
+};
+object 'To_central_point' : XmToggleButton {
+	arguments {
+	name = 'to_central_point';
+	lastGenName = 'To_central_point';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'add central point';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)15 )
+';
+	};
+};
+object 'To_central_involution' : XmToggleButton {
+	arguments {
+	name = 'to_central_involution';
+	lastGenName = 'To_central_involution';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'add central involution';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)16 )
+';
+	};
+};
+object 'To_group_on_edges' : XmToggleButton {
+	arguments {
+	name = 'to_group_on_edges';
+	lastGenName = 'To_group_on_edges';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'induced group on edges';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)17 )
+';
+	};
+};
+object 'To_relabel_points' : XmToggleButton {
+	arguments {
+	name = 'to_relabel_points';
+	lastGenName = 'To_relabel_points';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'relabel points';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)18 )
+';
+	};
+};
+object 'To_ext1' : XmToggleButton {
+	arguments {
+	name = 'to_ext1';
+	lastGenName = 'To_ext1';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'ext1 (unused)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)19 )
+';
+	};
+};
+object 'To_ext2' : XmToggleButton {
+	arguments {
+	name = 'to_ext2';
+	lastGenName = 'To_ext2';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'ext2 (unused)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)20 )
+';
+	};
+};
+object 'To_ext3' : XmToggleButton {
+	arguments {
+	name = 'to_ext3';
+	lastGenName = 'To_ext3';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'ext3 (unused)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solid_toggle( (void *)21 )
+';
+	};
+};
+};
+};
+};
+    attachments {
+    attachment {
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '55' : XmForm {
+	arguments {
+	lastGenName = 'form55';
+	XmNbackground = 'color1';
+	};
+object '14' : XmPushButton {
+	arguments {
+	name = 'choose';
+	lastGenName = 'button14';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString = 'choose';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_archimed_choose( )
+';
+	};
+};
+object '15' : XmPushButton {
+	arguments {
+	name = 'dismiss';
+	lastGenName = 'button15';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNlabelString = 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_archimed_dismiss( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 45;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 55;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 97;
+	XmNleftAttachment = 5 0 3;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 3 2;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'shell1' : XmDialogShell {
+	arguments {
+	name = 'shell1';
+	lastGenName = 'shell1';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_shell1 (Display *display, char *app_name, int app_argc, char **app_argv)
+';
+	XmNallowShellResize = true;
+	XmNprimary = 1;
+	};
+object '57' : XmForm {
+	arguments {
+	lastGenName = 'form57';
+	XmNbackground = 'color3';
+	XmNautoUnmanage = false;
+	};
+object '4' : XmFrame {
+	arguments {
+	lastGenName = 'frame4';
+	};
+object 'Back_form' : XmForm {
+	arguments {
+	name = 'back_form';
+	lastGenName = 'Back_form';
+	XmNborderColor =  * 'color1';
+	};
+object 'Menu_bar' : XmMenuBar {
+	arguments {
+	name = 'menu_bar';
+	lastGenName = 'Menu_bar';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	};
+object 'File_menu' : XmCascadeButton {
+	arguments {
+	name = 'file_menu';
+	lastGenName = 'File_menu';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'File';
+	XmNfontList = 'bfont';
+	};
+object '3' : XmPulldownMenu {
+	arguments {
+	lastGenName = 'menu3';
+	generateResName = true;
+	XmNbackground = 'color3';
+	};
+object 'Quit_mb' : XmPushButton {
+	arguments {
+	name = 'quit_mb';
+	lastGenName = 'Quit_mb';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Quit';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_quit( )
+';
+	};
+};
+};
+};
+object 'Group_menu' : XmCascadeButton {
+	arguments {
+	name = 'group_menu';
+	lastGenName = 'Group_menu';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Group';
+	XmNfontList = 'bfont';
+	};
+object '4' : XmPulldownMenu {
+	arguments {
+	lastGenName = 'menu4';
+	generateResName = true;
+	XmNbackground = 'color3';
+	};
+object '5' : XmPushButton {
+	arguments {
+	name = 'choose_aut_group';
+	lastGenName = 'button5';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Choose prescribed automorphism group';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_choose_aut_group( )
+';
+	};
+};
+object 'button12' : XmPushButton {
+	arguments {
+	name = 'show_solid';
+	lastGenName = 'button12';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'show solid';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_show_solid( )
+';
+	};
+};
+object '2' : XmSeparator {
+	arguments {
+	lastGenName = 'separator2';
+	};
+};
+object '10' : XmPushButton {
+	arguments {
+	name = 'calc_subgroup_lattice';
+	lastGenName = 'button10';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'calc subgroup lattice: w.r.t. inner automorphisms';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_sgl( )
+';
+	};
+};
+object 'To_asup' : XmToggleButton {
+	arguments {
+	name = 'toggle_asup';
+	lastGenName = 'To_asup';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'A-sup';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNset = false;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sgl_type( (void *)0 )
+';
+	};
+};
+object 'To_ainf' : XmToggleButton {
+	arguments {
+	name = 'toggle_ainf';
+	lastGenName = 'To_ainf';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'A-inf';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNset = false;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sgl_type( (void *)1 )
+';
+	};
+};
+object 'To_all' : XmToggleButton {
+	arguments {
+	name = 'toggle_all';
+	lastGenName = 'To_all';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'all';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNset = false;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sgl_type( (void *)2 )
+';
+	};
+};
+object 'To_poset' : XmToggleButton {
+	arguments {
+	name = 'toggle_poset';
+	lastGenName = 'To_poset';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'poset';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNset = false;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sgl_type( (void *)3 )
+';
+	};
+};
+object '13' : XmPushButton {
+	arguments {
+	name = 'show_subgroup_lattice';
+	lastGenName = 'button13';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'show subgroup lattice 3D';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_show_sgl3D( )
+';
+	};
+};
+object '1' : XmPushButton {
+	arguments {
+	name = 'show_subgroup_lattice';
+	lastGenName = 'button1';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'show subgroup lattice 2D';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_show_sgl2D( )
+';
+	};
+};
+object '11' : XmPushButton {
+	arguments {
+	name = 'show_subgroup_lattice';
+	lastGenName = 'button11';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'show subgroup lattice, Burnside matrix';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_show_sgl( )
+';
+	};
+};
+};
+};
+object 'Parameter_menu' : XmCascadeButton {
+	arguments {
+	name = 'parameter_menu';
+	lastGenName = 'Parameter_menu';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Parameters';
+	XmNfontList = 'bfont';
+	};
+object '5' : XmPulldownMenu {
+	arguments {
+	lastGenName = 'menu5';
+	generateResName = true;
+	XmNbackground = 'color3';
+	};
+object 'Lambda_i_button' : XmPushButton {
+	arguments {
+	name = 'lambda_i';
+	lastGenName = 'Lambda_i_button';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * '\\lambda_i';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_lambda_i( )
+';
+	};
+};
+object 'Mendelsohn_button' : XmPushButton {
+	arguments {
+	name = 'Mendelsohn';
+	lastGenName = 'Mendelsohn_button';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Mendelsohn';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_mendelsohn( )
+';
+	};
+};
+object 'Koehler_button' : XmPushButton {
+	arguments {
+	name = 'Koehler';
+	lastGenName = 'Koehler_button';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Koehler';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_koehler( )
+';
+	};
+};
+};
+};
+object 'Km_menu' : XmCascadeButton {
+	arguments {
+	name = 'km_menu';
+	lastGenName = 'Km_menu';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Kramer-Mesner';
+	XmNfontList = 'bfont';
+	};
+object '6' : XmPulldownMenu {
+	arguments {
+	lastGenName = 'menu6';
+	generateResName = true;
+	XmNbackground = 'color3';
+	};
+object 'Compute_km_button' : XmPushButton {
+	arguments {
+	name = 'compute_KM';
+	lastGenName = 'Compute_km_button';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_5';
+	XmNlabelString =  * 'compute Kramer Mesner matrix';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_compute_KM( )
+';
+	};
+};
+object 'Show_matrix_button' : XmPushButton {
+	arguments {
+	name = 'show_matrix';
+	lastGenName = 'Show_matrix_button';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_6';
+	XmNlabelString =  * 'show matrix';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_show_KM( )
+';
+	};
+};
+object '6' : XmSeparator {
+	arguments {
+	lastGenName = 'separator6';
+	};
+};
+object 'Toggle_strong_gens' : XmToggleButton {
+	arguments {
+	name = 'toggle_strong_gens';
+	lastGenName = 'Toggle_strong_gens';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'compute strong generating set';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 1;
+	XmNset = false;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+};
+object 'Toggle_orderly_generation' : XmToggleButton {
+	arguments {
+	name = 'toggle_orderly_gen';
+	lastGenName = 'Toggle_orderly_generation';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'use orderly generation';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 1;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+};
+object 'Toggle_TDO' : XmToggleButton {
+	arguments {
+	name = 'toggle_TDO';
+	lastGenName = 'Toggle_TDO';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'compute TDO of KM-matrix afterwards';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 1;
+	XmNset = false;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+};
+object 'Toggle_canonical_reps' : XmToggleButton {
+	arguments {
+	name = 'toggle_canonical_reps';
+	lastGenName = 'Toggle_canonical_reps';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'canonical representatives';
+	XmNmarginTop = 1;
+	XmNmarginBottom = 1;
+	XmNmarginLeft = 19;
+	XmNalignment = 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 1;
+	XmNset = false;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 14;
+	};
+};
+};
+};
+object 'Solver_menu' : XmCascadeButton {
+	arguments {
+	name = 'solver_menu';
+	lastGenName = 'Solver_menu';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Solve';
+	XmNfontList = 'bfont';
+	};
+object '7' : XmPulldownMenu {
+	arguments {
+	lastGenName = 'menu7';
+	folded = true;
+	};
+object 'Lll_b' : XmPushButton {
+	arguments {
+	name = 'lll_b';
+	lastGenName = 'Lll_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'LLL';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_LLL( )
+';
+	};
+};
+object 'Lll_restart_b' : XmPushButton {
+	arguments {
+	name = 'lll_restart_b';
+	lastGenName = 'Lll_restart_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'LLL with restart';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_LLL_restart( )
+';
+	};
+};
+object '3' : XmSeparator {
+	arguments {
+	lastGenName = 'separator3';
+	};
+};
+object 'Mckay_b' : XmPushButton {
+	arguments {
+	name = 'mckay_b';
+	lastGenName = 'Mckay_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'McKay (backtrack)';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_mckay( )
+';
+	};
+};
+object 'Spread_b' : XmPushButton {
+	arguments {
+	name = 'spread_b';
+	lastGenName = 'Spread_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Spread';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_spread( )
+';
+	};
+};
+object 'Dance_b' : XmPushButton {
+	arguments {
+	name = 'dance_b';
+	lastGenName = 'Dance_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Dance (lambda=1 only)';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_dance( )
+';
+	};
+};
+object '7' : XmSeparator {
+	arguments {
+	lastGenName = 'separator7';
+	};
+};
+object 'LS1_b' : XmPushButton {
+	arguments {
+	name = 'ls1_b';
+	lastGenName = 'LS1_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Large set (deterministic)';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_ls1( )
+';
+	};
+};
+object 'LS2_b' : XmPushButton {
+	arguments {
+	name = 'ls2_b';
+	lastGenName = 'LS2_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Large set (random)';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_ls2( )
+';
+	};
+};
+object '8' : XmSeparator {
+	arguments {
+	lastGenName = 'separator8';
+	};
+};
+object 'Get_solutions_b' : XmPushButton {
+	arguments {
+	name = 'get_solutions_b';
+	lastGenName = 'Get_solutions_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'get solutions from solver';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_get_solutions( )
+';
+	};
+};
+object 'Check_solutions_b' : XmPushButton {
+	arguments {
+	name = 'check_solutions_b';
+	lastGenName = 'Check_solutions_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'check solutions';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_check_solutions( )
+';
+	};
+};
+object '1' : XmSeparator {
+	arguments {
+	lastGenName = 'separator1';
+	};
+};
+object 'Param_b' : XmPushButton {
+	arguments {
+	name = 'param_b';
+	lastGenName = 'Param_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Parameters';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_parameter( )
+';
+	};
+};
+};
+};
+object 'Report_menu' : XmCascadeButton {
+	arguments {
+	name = 'report_menu';
+	lastGenName = 'Report_menu';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Report';
+	XmNfontList = 'bfont';
+	};
+object '10' : XmPulldownMenu {
+	arguments {
+	lastGenName = 'menu10';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color3';
+	};
+object 'Report_b' : XmPushButton {
+	arguments {
+	name = 'report_b';
+	lastGenName = 'Report_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Report';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_report( )
+';
+	};
+};
+object 'Iso_test_canon_b' : XmPushButton {
+	arguments {
+	name = 'iso_test_canon_b';
+	lastGenName = 'Iso_test_canon_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Isomorphism test (canonical form)';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_iso_test_canonical( )
+';
+	};
+};
+object 'Iso_test_sylow_b' : XmPushButton {
+	arguments {
+	name = 'iso_test_sylow_b';
+	lastGenName = 'Iso_test_sylow_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Isomorphism test (p-Sylow subgroup)';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_iso_test_sylow( )
+';
+	};
+};
+object 'Show_design_b' : XmPushButton {
+	arguments {
+	name = 'show_design_b';
+	lastGenName = 'Show_design_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Show design (lambda, p), p >= 1';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_show_design( )
+';
+	};
+};
+object '10' : XmSeparator {
+	arguments {
+	lastGenName = 'separator10';
+	};
+};
+object 'Memory_usage_b' : XmPushButton {
+	arguments {
+	name = 'memory_usage';
+	lastGenName = 'Memory_usage_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Show memory usage';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_show_memory_usage( )
+';
+	};
+};
+object '4' : XmSeparator {
+	arguments {
+	lastGenName = 'separator4';
+	};
+};
+object 'Database_b' : XmPushButton {
+	arguments {
+	name = 'database_b';
+	lastGenName = 'Database_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_7';
+	XmNlabelString =  * 'Database of design parameter sets';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_database( )
+';
+	};
+};
+};
+};
+};
+object 'Discreta_title' : XmLabel {
+	arguments {
+	name = 'title';
+	lastGenName = 'Discreta_title';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * '*** DISCRETA ***';
+	XmNfontList = 'bfont';
+	};
+};
+object 'Main_form' : XmForm {
+	arguments {
+	name = 'main_form';
+	was_selected = true;
+	lastGenName = 'Main_form';
+	folded = true;
+	XmNwidth = 700;
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object 'Left_form' : XmForm {
+	arguments {
+	name = 'left_form';
+	lastGenName = 'Left_form';
+	folded = true;
+	XmNbackground =  * 'color1';
+	XmNverticalSpacing = 0;
+	};
+object 'Group_form_outer' : XmForm {
+	arguments {
+	name = 'group_form_outer';
+	lastGenName = 'Group_form_outer';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '2' : XmFrame {
+	arguments {
+	name = 'd_frame';
+	lastGenName = 'frame2';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object 'Group_form' : XmForm {
+	arguments {
+	name = 'group_form';
+	lastGenName = 'Group_form';
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object 'Label1' : XmLabel {
+	arguments {
+	name = 'label1';
+	lastGenName = 'Label1';
+	generateResName = true;
+	XmNbackground =  * 'color1';
+	XmNlabelString =  * 'the group:';
+	XmNfontList = 'bfont';
+	};
+};
+object '1' : XmRowColumn {
+	arguments {
+	name = 'd_rc';
+	lastGenName = 'rowcol1';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNspacing = 0;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	};
+object '6' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form6';
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '3' : XmLabel {
+	arguments {
+	name = 'group:';
+	lastGenName = 'label3';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'group:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_group' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Text_group';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '7' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form7';
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '4' : XmLabel {
+	arguments {
+	name = 'v:';
+	lastGenName = 'label4';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'v:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_v' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Text_v';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '16' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form16';
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '11' : XmLabel {
+	arguments {
+	name = 'deg:';
+	lastGenName = 'label11';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'order:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_order' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Text_order';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object 'Param_form_outer' : XmForm {
+	arguments {
+	name = 'param_form_outer';
+	lastGenName = 'Param_form_outer';
+	XmNbackground =  * 'color1';
+	};
+object '3' : XmFrame {
+	arguments {
+	lastGenName = 'frame3';
+	};
+object 'Disc_param_form' : XmForm {
+	arguments {
+	name = 'disc_param_form';
+	lastGenName = 'Disc_param_form';
+	XmNbackground =  * 'color1';
+	};
+object 'Label13' : XmLabel {
+	arguments {
+	lastGenName = 'Label13';
+	generateResName = true;
+	XmNbackground =  * 'color1';
+	XmNlabelString =  * 'the design parameters:';
+	XmNfontList = 'bfont';
+	};
+};
+object '4' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol4';
+	folded = true;
+	XmNbackground =  * 'color1';
+	};
+object '11' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form11';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '8' : XmLabel {
+	arguments {
+	name = 'lambda:';
+	lastGenName = 'label8';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'lambda:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_lambda' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Text_lambda';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '1';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '12' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form12';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '9' : XmLabel {
+	arguments {
+	name = 'm:';
+	lastGenName = 'label9';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'p:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_p' : XmTextField {
+	arguments {
+	name = 'text_p';
+	lastGenName = 'Text_p';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    };
+};
+object 'Right_form' : XmForm {
+	arguments {
+	name = 'right_form';
+	lastGenName = 'Right_form';
+	folded = true;
+	XmNbackground =  * 'color1';
+	};
+object 'Km_form_outer' : XmForm {
+	arguments {
+	name = 'km_form_outer';
+	lastGenName = 'Km_form_outer';
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object 'Km_frame' : XmFrame {
+	arguments {
+	name = 'km_frame';
+	lastGenName = 'Km_frame';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object 'Disc_km_form' : XmForm {
+	arguments {
+	name = 'disc_km_form';
+	lastGenName = 'Disc_km_form';
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object 'Label12' : XmLabel {
+	arguments {
+	name = 'label12';
+	lastGenName = 'Label12';
+	generateResName = true;
+	XmNbackground =  * 'color1';
+	XmNlabelString =  * 'the Kramer-Mesner matrix:';
+	XmNfontList = 'bfont';
+	};
+};
+object 'Km_text_rowcol' : XmRowColumn {
+	arguments {
+	name = 'km_text_rowcol';
+	lastGenName = 'Km_text_rowcol';
+	folded = true;
+	XmNbackground =  * 'color1';
+	};
+object '8' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form8';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '5' : XmLabel {
+	arguments {
+	name = 't:';
+	lastGenName = 'label5';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 't:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_t' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Text_t';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '5';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '9' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form9';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '6' : XmLabel {
+	arguments {
+	name = 'k:';
+	lastGenName = 'label6';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'k:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_k' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Text_k';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '6';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '13' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form13';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '10' : XmLabel {
+	arguments {
+	name = 'file:';
+	lastGenName = 'label10';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'file:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_file' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Text_file';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 24;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 26;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'Km_toggle_rowcol' : XmRowColumn {
+	arguments {
+	name = 'km_toggle_rowcol';
+	lastGenName = 'Km_toggle_rowcol';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNspacing = 0;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	};
+object '3' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol3';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNspacing = 0;
+	XmNmarginWidth = 0;
+	XmNorientation = 2;
+	};
+object 'Toggle_k2' : XmToggleButton {
+	arguments {
+	name = 'toggle_k2';
+	lastGenName = 'Toggle_k2';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * '{k,k2} design';
+	XmNfontList = 'bfont';
+	XmNindicatorSize = 15;
+	};
+};
+object '14' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form14';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '2' : XmLabel {
+	arguments {
+	name = 'k:';
+	lastGenName = 'label2';
+	folded = true;
+	generateResName = true;
+	XmNwidth = 30;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'k2:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_k2' : XmTextField {
+	arguments {
+	name = 'text_k2';
+	lastGenName = 'Text_k2';
+	folded = true;
+	generateResName = true;
+	XmNwidth = 30;
+	XmNbackground = 'color1';
+	XmNvalue = '6';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 49;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 51;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object '6' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol6';
+	XmNbackground = 'color1';
+	XmNspacing = 0;
+	XmNmarginWidth = 0;
+	XmNorientation = 2;
+	};
+object 'Toggle_graphical' : XmToggleButton {
+	arguments {
+	name = 'graphical design (S_n)';
+	lastGenName = 'Toggle_graphical';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'graphical design';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment = 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 1;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 15;
+	};
+};
+object 'Toggle_graph_sn' : XmToggleButton {
+	arguments {
+	name = 'toggle_graph_sn';
+	lastGenName = 'Toggle_graph_sn';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Sn';
+	XmNfontList = 'bfont';
+	XmNindicatorSize = 15;
+	};
+};
+object '15' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form15';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '7' : XmLabel {
+	arguments {
+	name = 'k:';
+	lastGenName = 'label7';
+	folded = true;
+	generateResName = true;
+	XmNwidth = 20;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'n:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Text_graphical_n' : XmTextField {
+	arguments {
+	name = 'text_graphical_n';
+	lastGenName = 'Text_graphical_n';
+	folded = true;
+	generateResName = true;
+	XmNwidth = 30;
+	XmNbackground = 'color1';
+	XmNvalue = '6';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 49;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 51;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 49;
+	XmNleftAttachment = 5 0 1;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 99;
+	XmNleftAttachment = 5 0 51;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object 'Discreta_scrolled_text_' : XmScrolledText {
+	arguments {
+	name = 'textSW';
+	lastGenName = 'Discreta_scrolled_text_';
+	folded = true;
+	XmNwidth = 700;
+	XmNheight = 277;
+	XmNshadowThickness = 0;
+	XmNstringDirection = 0;
+	XmNbackground =  * 'color1';
+	XmNhighlightPixmap = 'xdref_12';
+	XmNspacing = 4;
+	};
+object 'xdref_9' : XmScrollBar {
+	arguments {
+	name = 'HorScrollBar';
+	lastGenName = 'xdref_9';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNorientation = 2;
+	};
+};
+object 'xdref_10' : XmScrollBar {
+	arguments {
+	name = 'VertScrollBar';
+	lastGenName = 'xdref_10';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color1';
+	};
+};
+object 'xdref_11' : XmText {
+	arguments {
+	name = 'text';
+	lastGenName = 'xdref_11';
+	folded = true;
+	XmNwidth = 774;
+	XmNheight = 258;
+	XmNbackground = 'color1';
+	XmNvalue =  * '
+ #####      #     ####    ####   #####   ######   #####    ##
+ #    #     #    #       #    #  #    #  #          #     #  #
+ #    #     #     ####   #       #    #  #####      #    #    #
+ #    #     #         #  #       #####   #          #    ######
+ #    #     #    #    #  #    #  #   #   #          #    #    #
+ #####      #     ####    ####   #    #  ######     #    #    #
+
+  -  the design construction tool by
+     Anton Betten <Anton.Betten@uni-bayreuth.de> 
+     Reinhard Laue <Reinhard.Laue@uni-bayreuth.de>
+     Alfred.Wassermann <Alfred.Wassermann@uni-bayreuth.de>
+with additional programs and algorithms by
+     Brendan D. McKay <bdm@cs.anu.edu.au>';
+	XmNfontList = 'courier';
+	XmNverifyBell = true;
+	XmNeditMode = 0;
+	};
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 3 3;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'Database_shell' : XmDialogShell {
+	arguments {
+	name = 'database';
+	lastGenName = 'Database_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_Database_shell (Widget parent)
+';
+	managed = false;
+	XmNborderWidth = 0;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle = 'database';
+	};
+object 'Database_form_outer' : XmForm {
+	arguments {
+	name = 'database_form_outer';
+	lastGenName = 'Database_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '16' : XmFrame {
+	arguments {
+	name = 'db_frame';
+	lastGenName = 'frame16';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '34' : XmForm {
+	arguments {
+	name = 'db_frame_form';
+	lastGenName = 'form34';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '35' : XmForm {
+	arguments {
+	name = 'db_top_form';
+	lastGenName = 'form35';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '26' : XmLabel {
+	arguments {
+	name = 'db_label';
+	lastGenName = 'label26';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'database of design parameters t-(v,k,\\lambda): ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_create_b' : XmPushButton {
+	arguments {
+	name = 'db_create_b';
+	lastGenName = 'Db_create_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString =  * 'create';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_db_create( )
+';
+	};
+};
+object 'Db_add_b' : XmPushButton {
+	arguments {
+	name = 'db_add_b';
+	lastGenName = 'Db_add_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString =  * 'add';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_db_add( )
+';
+	};
+};
+object 'Db_read_base_b' : XmPushButton {
+	arguments {
+	name = 'db_read_base_b';
+	lastGenName = 'Db_read_base_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNlabelString =  * 'read design.txt';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_db_read_base( )
+';
+	};
+};
+object 'Db_read_base2_b' : XmPushButton {
+	arguments {
+	name = 'db_read_base2_b';
+	lastGenName = 'Db_read_base2_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_3';
+	XmNlabelString =  * 'read design.txt (clear always)';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_db_read_base_clear_always( )
+';
+	};
+};
+object 'Db_write_html_b' : XmPushButton {
+	arguments {
+	name = 'db_write_html_b';
+	lastGenName = 'Db_write_html_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_4';
+	XmNlabelString =  * 'write .html';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_db_write_html( )
+';
+	};
+};
+object 'Db_dump_b' : XmPushButton {
+	arguments {
+	name = 'db_dump_b';
+	lastGenName = 'Db_dump_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_4';
+	XmNlabelString =  * 'dump on stdout';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_db_dump( )
+';
+	};
+};
+object 'Tvt_closure_b' : XmPushButton {
+	arguments {
+	name = 'tvt closure';
+	lastGenName = 'Tvt_closure_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'Tran van Trung closure';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_tvt_closure( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 40;
+	XmNleftAttachment = 5 0 10;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 60;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNtopAttachment = 3 4;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 40;
+	XmNleftAttachment = 5 0 10;
+	XmNtopAttachment = 3 5;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 60;
+	XmNtopAttachment = 3 5;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 6;
+    };
+    };
+};
+object '17' : XmFrame {
+	arguments {
+	name = 'db_frame2';
+	lastGenName = 'frame17';
+	folded = true;
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNhighlightPixmap = 'xdref_5';
+	XmNshadowType = 5;
+	};
+object '45' : XmForm {
+	arguments {
+	name = 'db_middle_form';
+	lastGenName = 'form45';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '27' : XmLabel {
+	arguments {
+	name = 'db_label2';
+	lastGenName = 'label27';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'search parameter sets: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '14' : XmRowColumn {
+	arguments {
+	name = 'db_rc';
+	lastGenName = 'rowcol14';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNspacing = 3;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	XmNentryAlignment = 2;
+	};
+object '46' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form46';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '38' : XmLabel {
+	arguments {
+	name = 't>=';
+	lastGenName = 'label38';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 't>=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_t_min_text' : XmTextField {
+	arguments {
+	name = 'db_t_min_text';
+	lastGenName = 'Db_t_min_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '47' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form47';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '39' : XmLabel {
+	arguments {
+	name = 't<=';
+	lastGenName = 'label39';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 't<=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_t_max_text' : XmTextField {
+	arguments {
+	name = 'db_t_max_text';
+	lastGenName = 'Db_t_max_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '48' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form48';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '40' : XmLabel {
+	arguments {
+	name = 'v>=';
+	lastGenName = 'label40';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'v>=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_v_min_text' : XmTextField {
+	arguments {
+	name = 'db_v_min_text';
+	lastGenName = 'Db_v_min_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '49' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form49';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '41' : XmLabel {
+	arguments {
+	name = 'v<=';
+	lastGenName = 'label41';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'v<=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_v_max_text' : XmTextField {
+	arguments {
+	name = 'db_v_max_text';
+	lastGenName = 'Db_v_max_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '50' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form50';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '42' : XmLabel {
+	arguments {
+	name = 'k>=';
+	lastGenName = 'label42';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'k>=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_k_min_text' : XmTextField {
+	arguments {
+	name = 'db_k_min_text';
+	lastGenName = 'Db_k_min_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '51' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form51';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '43' : XmLabel {
+	arguments {
+	name = 'k<=';
+	lastGenName = 'label43';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'k<=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_k_max_text' : XmTextField {
+	arguments {
+	name = 'db_k_max_text';
+	lastGenName = 'Db_k_max_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '52' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form52';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '44' : XmLabel {
+	arguments {
+	name = 'lambda>=';
+	lastGenName = 'label44';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = '\\lambda>=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_lambda_min_text' : XmTextField {
+	arguments {
+	name = 'db_lambda_min_text';
+	lastGenName = 'Db_lambda_min_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '53' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form53';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '45' : XmLabel {
+	arguments {
+	name = 'lambda<=';
+	lastGenName = 'label45';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = '\\lambda<=';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Db_lambda_max_text' : XmTextField {
+	arguments {
+	name = 'db_lambda_max_text';
+	lastGenName = 'Db_lambda_max_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'Db_search_b' : XmPushButton {
+	arguments {
+	name = 'db_search_b';
+	lastGenName = 'Db_search_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_6';
+	XmNlabelString =  * 'search';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_search( )
+';
+	};
+};
+object 'Db_delete_b' : XmPushButton {
+	arguments {
+	name = 'db_delete_b';
+	lastGenName = 'Db_delete_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_6';
+	XmNlabelString =  * 'delete';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_delete( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 50;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    };
+};
+};
+object 'Db_dismiss_b' : XmPushButton {
+	arguments {
+	name = 'db_dismiss_b';
+	lastGenName = 'Db_dismiss_b';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_7';
+	XmNlabelString =  * 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_dismiss( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 40;
+	XmNleftAttachment = 5 0 10;
+	XmNtopAttachment = 3 2;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'Solvable_shell' : XmDialogShell {
+	arguments {
+	name = 'solvable_shell';
+	lastGenName = 'Solvable_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_Solvable_shell (Widget parent)
+';
+	managed = false;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle =  * 'solvable group';
+	};
+object 'Solvable_form_outer' : XmForm {
+	arguments {
+	name = 'solvable_form_outer';
+	lastGenName = 'Solvable_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '15' : XmFrame {
+	arguments {
+	name = 'OTHER_frame';
+	lastGenName = 'frame15';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '25' : XmForm {
+	arguments {
+	name = 'OTHER_frame_form';
+	lastGenName = 'form25';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '35' : XmLabel {
+	arguments {
+	name = 'OTHER_label';
+	lastGenName = 'label35';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'solvable group: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '7' : XmRowColumn {
+	arguments {
+	name = 'OTHER_rc';
+	lastGenName = 'rowcol7';
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNspacing = 3;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	XmNentryAlignment = 2;
+	};
+object 'To_solvable_n_m' : XmToggleButton {
+	arguments {
+	name = 'solvable group n#m from catalog';
+	lastGenName = 'To_solvable_n_m';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'solvable group n#m from catalog';
+	XmNmarginTop = 0;
+	XmNmarginBottom = 0;
+	XmNmarginLeft = 25;
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 15;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_solvable_toggle( (void *) 0 )
+';
+	};
+};
+};
+object '13' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol13';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object '29' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form29';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '36' : XmLabel {
+	arguments {
+	name = 'n:';
+	lastGenName = 'label36';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'n:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Solvable_n_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Solvable_n_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue =  * '39';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '43' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form43';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '37' : XmLabel {
+	arguments {
+	name = 'm:';
+	lastGenName = 'label37';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'm:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Solvable_m_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Solvable_m_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue =  * '2';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object '2' : XmPushButton {
+	arguments {
+	name = 'choose';
+	lastGenName = 'button2';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString = 'choose';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_solvable_choose( )
+';
+	};
+};
+object '3' : XmPushButton {
+	arguments {
+	name = 'dismiss';
+	lastGenName = 'button3';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNlabelString = 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_solvable_dismiss( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 4;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'LLL_shell' : XmDialogShell {
+	arguments {
+	name = 'LLL_popup_shell';
+	lastGenName = 'LLL_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_LLL_shell (Widget parent)
+';
+	managed = false;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle =  * 'discreta parameter';
+	};
+object 'LLL_form_outer' : XmForm {
+	arguments {
+	name = 'LLL';
+	lastGenName = 'LLL_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '11' : XmFrame {
+	arguments {
+	name = 'LLL_frame';
+	lastGenName = 'frame11';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '37' : XmForm {
+	arguments {
+	name = 'LLL_frame_form';
+	lastGenName = 'form37';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '28' : XmLabel {
+	arguments {
+	name = 'LLL_label';
+	lastGenName = 'label28';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'LLL parameters: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '11' : XmRowColumn {
+	arguments {
+	name = 'LLL_rc';
+	lastGenName = 'rowcol11';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNspacing = 3;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	XmNentryAlignment = 2;
+	};
+object '38' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form38';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '29' : XmLabel {
+	arguments {
+	name = 'c0_factor:';
+	lastGenName = 'label29';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'c0_factor:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LLL_c0_factor_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LLL_c0_factor_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '20';
+	XmNcolumns =  * 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '39' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form39';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '30' : XmLabel {
+	arguments {
+	name = 'beta:';
+	lastGenName = 'label30';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'beta:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LLL_beta_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LLL_beta_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '120';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '40' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form40';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '31' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label31';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'p:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LLL_p_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LLL_p_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '14';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '62' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form62';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '49' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label49';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'silence level:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Silence_t' : XmTextField {
+	arguments {
+	name = 'silence_t';
+	lastGenName = 'Silence_t';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '0';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '63' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form63';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '50' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label50';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'number of restarts:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Nb_restart_t' : XmTextField {
+	arguments {
+	name = 'nb_restart_t';
+	lastGenName = 'Nb_restart_t';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '4';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object '25' : XmLabel {
+	arguments {
+	name = 'LLL_label';
+	lastGenName = 'label25';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'large sets parameters: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '5' : XmRowColumn {
+	arguments {
+	name = 'LLL_rc';
+	lastGenName = 'rowcol5';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNspacing = 3;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	XmNentryAlignment = 2;
+	};
+object '33' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form33';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '51' : XmLabel {
+	arguments {
+	name = 'c0_factor:';
+	lastGenName = 'label51';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'N:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LS_N_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LS_N_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '0';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '58' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form58';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '52' : XmLabel {
+	arguments {
+	name = 'beta:';
+	lastGenName = 'label52';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'max_round:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LS_max_round_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LS_max_round_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '0';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '59' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form59';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '53' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label53';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'max_solutions:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LS_max_solutions_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LS_max_solutions_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '0';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '60' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form60';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '54' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label54';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'max_loops (in LLL):';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LS_max_loops_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LS_max_loops_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '0';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object '46' : XmLabel {
+	arguments {
+	lastGenName = 'label46';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'graphical design matrix size (print):';
+	XmNfontList = 'bfont';
+	};
+};
+object '15' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol15';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object '23' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form23';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '47' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label47';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * '# rows:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LLL_graphical_nrow_t' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LLL_graphical_nrow_t';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '14';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '54' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form54';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '48' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label48';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * '# columns:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LLL_graphical_ncol_t' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LLL_graphical_ncol_t';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '14';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object '1' : XmLabel {
+	arguments {
+	lastGenName = 'label1';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'select the solutions for report';
+	XmNfontList = 'bfont';
+	};
+};
+object '14' : XmLabel {
+	arguments {
+	lastGenName = 'label14';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * '(the interval is [first,first+len-1])';
+	XmNfontList = 'bfont';
+	};
+};
+object '2' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol2';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color1';
+	};
+object '20' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form20';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '15' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label15';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'lambda:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Pref_sel_lambda' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Pref_sel_lambda';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '1';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '5' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form5';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '12' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label12';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'first solution (starting with 1):';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Pref_sel_first' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Pref_sel_first';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '1';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '19' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form19';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '13' : XmLabel {
+	arguments {
+	name = 'p:';
+	lastGenName = 'label13';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * '# of solutions:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'Pref_sel_len' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'Pref_sel_len';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '1000000';
+	XmNcolumns = 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'LLL_ok_b' : XmPushButton {
+	arguments {
+	name = 'LLL_ok';
+	lastGenName = 'LLL_ok_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString =  * 'choose';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_LLL_ok( )
+';
+	};
+};
+object 'LLL_cncl_b' : XmPushButton {
+	arguments {
+	name = 'LLL_cncl';
+	lastGenName = 'LLL_cncl_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNlabelString =  * 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_LLL_cncl( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 4;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 5;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 6;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 7;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 8;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 9;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 10;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'OTHER_shell' : XmDialogShell {
+	arguments {
+	name = 'OTHER_popup';
+	lastGenName = 'OTHER_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_OTHER_shell (Widget parent)
+';
+	managed = false;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle =  * 'well known group';
+	};
+object 'OTHER_form_outer' : XmForm {
+	arguments {
+	name = 'OTHER';
+	lastGenName = 'OTHER_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '10' : XmFrame {
+	arguments {
+	name = 'OTHER_frame';
+	lastGenName = 'frame10';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '30' : XmForm {
+	arguments {
+	name = 'OTHER_frame_form';
+	lastGenName = 'form30';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '22' : XmLabel {
+	arguments {
+	name = 'OTHER_label';
+	lastGenName = 'label22';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'well known permutation groups: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '10' : XmRowColumn {
+	arguments {
+	name = 'OTHER_rc';
+	lastGenName = 'rowcol10';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNspacing = 3;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	XmNentryAlignment = 2;
+	};
+object 'To_Sn_short' : XmToggleButton {
+	arguments {
+	name = 'S_n = < (12..n),(12)>';
+	lastGenName = 'To_Sn_short';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'S_n = < (12..n),(12)>';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 0 )
+';
+	};
+};
+object 'To_Sn_trans' : XmToggleButton {
+	arguments {
+	name = 'S_n = < (12),(23), ..., (n-1,n)>';
+	lastGenName = 'To_Sn_trans';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'S_n = < (12),(23), ..., (n-1,n)>';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 1 )
+';
+	};
+};
+object 'To_An' : XmToggleButton {
+	arguments {
+	name = 'A_n';
+	lastGenName = 'To_An';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'A_n';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 2 )
+';
+	};
+};
+object 'To_Dn' : XmToggleButton {
+	arguments {
+	name = 'D_n';
+	lastGenName = 'To_Dn';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'D_n';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 3 )
+';
+	};
+};
+object 'To_Cn' : XmToggleButton {
+	arguments {
+	name = 'C_n';
+	lastGenName = 'To_Cn';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'C_n';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 4 )
+';
+	};
+};
+object 'To_HolCn' : XmToggleButton {
+	arguments {
+	name = 'Hol(C_n)';
+	lastGenName = 'To_HolCn';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'Hol(C_n)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 5 )
+';
+	};
+};
+object 'To_Idn' : XmToggleButton {
+	arguments {
+	name = 'Id_n (trivial group on n points)';
+	lastGenName = 'To_Idn';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'Id_n (trivial group on n points)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 6 )
+';
+	};
+};
+object 'To_subgroup_of_hol' : XmToggleButton {
+	arguments {
+	name = 'subgroup of holomorph';
+	lastGenName = 'To_subgroup_of_hol';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Subgroup of Hol(C_n) of index m';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 7 )
+';
+	};
+};
+object 'To_SnwrSm' : XmToggleButton {
+	arguments {
+	name = 'S_n wreath S_m';
+	lastGenName = 'To_SnwrSm';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'S_n \\wreath S_m';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_toggle_well_known( (void *) 8 )
+';
+	};
+};
+};
+object '12' : XmRowColumn {
+	arguments {
+	lastGenName = 'rowcol12';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object '31' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form31';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '23' : XmLabel {
+	arguments {
+	name = 'n:';
+	lastGenName = 'label23';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'n:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'OTHER_n_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'OTHER_n_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue =  * '7';
+	XmNcolumns =  * 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '32' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form32';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '24' : XmLabel {
+	arguments {
+	name = 'm:';
+	lastGenName = 'label24';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'm:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'OTHER_m_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'OTHER_m_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue = '';
+	XmNcolumns =  * 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'OTHER_choose_b' : XmPushButton {
+	arguments {
+	name = 'choose';
+	lastGenName = 'OTHER_choose_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString = 'choose';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_other_choose( )
+';
+	};
+};
+object 'OTHER_dismiss_b' : XmPushButton {
+	arguments {
+	name = 'dismiss';
+	lastGenName = 'OTHER_dismiss_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNlabelString = 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_other_dismiss( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 4;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'LIN_shell' : XmDialogShell {
+	arguments {
+	name = 'LIN_popup';
+	lastGenName = 'LIN_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_LIN_shell (Widget parent)
+';
+	managed = false;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle =  * 'linear group';
+	};
+object 'LIN_form_outer' : XmForm {
+	arguments {
+	name = 'LIN';
+	lastGenName = 'LIN_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '9' : XmFrame {
+	arguments {
+	name = 'LIN_frame';
+	lastGenName = 'frame9';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '26' : XmForm {
+	arguments {
+	name = 'LIN_frame_form';
+	lastGenName = 'form26';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '19' : XmLabel {
+	arguments {
+	name = 'LIN_label';
+	lastGenName = 'label19';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'linear groups: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '9' : XmRowColumn {
+	arguments {
+	name = 'LIN_rc';
+	lastGenName = 'rowcol9';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNspacing = 3;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	XmNentryAlignment = 2;
+	};
+object 'To_PSL' : XmToggleButton {
+	arguments {
+	name = 'PSL';
+	lastGenName = 'To_PSL';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'PSL(n,q)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 0 )
+';
+	};
+};
+object 'To_PGL' : XmToggleButton {
+	arguments {
+	name = 'PGL';
+	lastGenName = 'To_PGL';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'PGL(n,q)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 1 )
+';
+	};
+};
+object 'To_PSSL' : XmToggleButton {
+	arguments {
+	name = 'PSSL';
+	lastGenName = 'To_PSSL';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'PSSL(n,q)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 2 )
+';
+	};
+};
+object 'To_PGGL' : XmToggleButton {
+	arguments {
+	name = 'PGGL';
+	lastGenName = 'To_PGGL';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'PGGL(n,q)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 3 )
+';
+	};
+};
+object 'To_SL' : XmToggleButton {
+	arguments {
+	name = 'SL';
+	lastGenName = 'To_SL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'SL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 4 )
+';
+	};
+};
+object 'To_GL' : XmToggleButton {
+	arguments {
+	name = 'GL';
+	lastGenName = 'To_GL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'GL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 5 )
+';
+	};
+};
+object 'To_SSL' : XmToggleButton {
+	arguments {
+	name = 'SSL';
+	lastGenName = 'To_SSL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'SSL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 6 )
+';
+	};
+};
+object 'To_GGL' : XmToggleButton {
+	arguments {
+	name = 'GGL';
+	lastGenName = 'To_GGL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'GGL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 7 )
+';
+	};
+};
+object 'To_ASL' : XmToggleButton {
+	arguments {
+	name = 'ASL';
+	lastGenName = 'To_ASL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'ASL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 8 )
+';
+	};
+};
+object 'To_AGL' : XmToggleButton {
+	arguments {
+	name = 'AGL';
+	lastGenName = 'To_AGL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'AGL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 9 )
+';
+	};
+};
+object 'To_ASSL' : XmToggleButton {
+	arguments {
+	name = 'ASSL';
+	lastGenName = 'To_ASSL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'ASSL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 10 )
+';
+	};
+};
+object 'To_AGGL' : XmToggleButton {
+	arguments {
+	name = 'AGGL';
+	lastGenName = 'To_AGGL';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'AGGL(n,q)';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 11 )
+';
+	};
+};
+object 'To_T' : XmToggleButton {
+	arguments {
+	name = 'to_T';
+	lastGenName = 'To_T';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'T(n,q): affine translations';
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNindicatorType = 2;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 12 )
+';
+	};
+};
+object 'To_PSU_3_q2' : XmToggleButton {
+	arguments {
+	name = 'PSU_3_q2';
+	lastGenName = 'To_PSU_3_q2';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'PSU(3,q^2)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 13 )
+';
+	};
+};
+object 'To_Sz_q' : XmToggleButton {
+	arguments {
+	name = 'Sz_q';
+	lastGenName = 'To_Sz_q';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'Sz(q)';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'bfont';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_linear_toggle( (void *) 14 )
+';
+	};
+};
+object '27' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form27';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '20' : XmLabel {
+	arguments {
+	name = 'q:';
+	lastGenName = 'label20';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'q:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LIN_q_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LIN_q_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue =  * '32';
+	XmNcolumns =  * 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '28' : XmForm {
+	arguments {
+	name = 'form';
+	lastGenName = 'form28';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '21' : XmLabel {
+	arguments {
+	name = 'n:';
+	lastGenName = 'label21';
+	folded = true;
+	generateResName = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'n:';
+	XmNalignment = 2;
+	XmNfontList = 'fontlist1';
+	};
+};
+object 'LIN_n_text' : XmTextField {
+	arguments {
+	name = 'text';
+	lastGenName = 'LIN_n_text';
+	folded = true;
+	XmNbackground = 'color1';
+	XmNvalue =  * '2';
+	XmNcolumns =  * 10;
+	XmNfontList = 'fontlist1';
+	XmNverifyBell = true;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 25;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 5 0 27;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'LIN_choose_b' : XmPushButton {
+	arguments {
+	name = 'choose';
+	lastGenName = 'LIN_choose_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString = 'choose';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_linear_choose( )
+';
+	};
+};
+object 'LIN_dismiss_b' : XmPushButton {
+	arguments {
+	name = 'dismiss';
+	lastGenName = 'LIN_dismiss_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNlabelString = 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_linear_dismiss( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'Sporadic_shell' : XmDialogShell {
+	arguments {
+	name = 'sporadic groups_popup';
+	lastGenName = 'Sporadic_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_Sporadic_shell (Widget parent)
+';
+	managed = false;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle =  * 'sporadic group';
+	};
+object 'Sporadic_form_outer' : XmForm {
+	arguments {
+	name = 'sporadic groups';
+	lastGenName = 'Sporadic_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '8' : XmFrame {
+	arguments {
+	name = 'SPORADIC_frame';
+	lastGenName = 'frame8';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '24' : XmForm {
+	arguments {
+	name = 'SPORADIC_frame_form';
+	lastGenName = 'form24';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '18' : XmLabel {
+	arguments {
+	name = 'SPORADIC_label';
+	lastGenName = 'label18';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'sporadic groups: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '8' : XmRowColumn {
+	arguments {
+	name = 'SPORADIC_rc';
+	lastGenName = 'rowcol8';
+	folded = true;
+	XmNshadowThickness = 0;
+	XmNnavigationType = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNspacing = 3;
+	XmNmarginWidth = 3;
+	XmNmarginHeight = 3;
+	XmNorientation = 1;
+	XmNpacking = 1;
+	XmNentryAlignment = 2;
+	};
+object 'To_M11' : XmToggleButton {
+	arguments {
+	name = 'M11';
+	lastGenName = 'To_M11';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'M11';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sporadic_toggle( (void *) 0 )
+';
+	};
+};
+object 'To_M12' : XmToggleButton {
+	arguments {
+	name = 'M12';
+	lastGenName = 'To_M12';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'M12';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sporadic_toggle( (void *) 1 )
+';
+	};
+};
+object 'To_M23' : XmToggleButton {
+	arguments {
+	name = 'M23';
+	lastGenName = 'To_M23';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'M23';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sporadic_toggle( (void *) 2 )
+';
+	};
+};
+object 'To_M24' : XmToggleButton {
+	arguments {
+	name = 'M24';
+	lastGenName = 'To_M24';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'M24';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sporadic_toggle( (void *) 3 )
+';
+	};
+};
+object 'To_HS' : XmToggleButton {
+	arguments {
+	name = 'Higman Sims on 176 points';
+	lastGenName = 'To_HS';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString = 'Higman Sims on 176 points';
+	XmNmarginTop = 2;
+	XmNmarginBottom = 2;
+	XmNmarginLeft = 25;
+	XmNalignment =  * 0;
+	XmNfontList = 'fontlist1';
+	XmNfillOnSelect = true;
+	XmNindicatorType = 2;
+	XmNvisibleWhenOff = true;
+	XmNindicatorSize = 21;
+	};
+	callbacks {
+	XmNvalueChangedCallback = '
+cb_sporadic_toggle( (void *) 4 )
+';
+	};
+};
+};
+object 'Sporadic_choose_b' : XmPushButton {
+	arguments {
+	name = 'choose';
+	lastGenName = 'Sporadic_choose_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString = 'choose';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_sporadic_choose( )
+';
+	};
+};
+object 'Sporadic_dismiss_b' : XmPushButton {
+	arguments {
+	name = 'dismiss';
+	lastGenName = 'Sporadic_dismiss_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNlabelString = 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_sporadic_dismiss( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 90;
+	XmNleftAttachment = 5 0 10;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+object 'Group_sel_shell' : XmDialogShell {
+	arguments {
+	name = 'group selection_popup';
+	lastGenName = 'Group_sel_shell';
+	createPreludeStatus = 1;
+	preInstantiation = 'void create_Group_sel_shell (Widget parent)
+';
+	managed = false;
+	XmNbackground = 'color1';
+	XmNallowShellResize = true;
+	XmNtitle =  * 'group selection';
+	};
+object 'Gsel_form_outer' : XmForm {
+	arguments {
+	name = 'group selection';
+	lastGenName = 'Gsel_form_outer';
+	XmNshadowThickness = 1;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '6' : XmFrame {
+	arguments {
+	name = 'g_frame';
+	lastGenName = 'frame6';
+	XmNshadowThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color2';
+	XmNshadowType = 5;
+	};
+object '2' : XmForm {
+	arguments {
+	name = 'g_frame_form';
+	lastGenName = 'form2';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '3' : XmForm {
+	arguments {
+	name = 'g_frame_form';
+	lastGenName = 'form3';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '16' : XmLabel {
+	arguments {
+	name = 'g_label';
+	lastGenName = 'label16';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'choose a group: ';
+	XmNfontList = 'fontlist1';
+	};
+};
+object '1' : XmForm {
+	arguments {
+	lastGenName = 'form1';
+	XmNbackground = 'color1';
+	};
+object '7' : XmFrame {
+	arguments {
+	lastGenName = 'frame7';
+	};
+object '21' : XmForm {
+	arguments {
+	lastGenName = 'form21';
+	generateResName = true;
+	XmNbackground = 'color1';
+	};
+object 'Gsel_button_form' : XmForm {
+	arguments {
+	name = 'gsel_button_form';
+	lastGenName = 'Gsel_button_form';
+	folded = true;
+	XmNbackground =  * 'color1';
+	};
+object 'Gsel_well_b' : XmPushButton {
+	arguments {
+	name = 'well_known';
+	lastGenName = 'Gsel_well_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString =  * 'well known';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_well_known( )
+';
+	};
+};
+object 'Gsel_linear_b' : XmPushButton {
+	arguments {
+	name = 'linear';
+	lastGenName = 'Gsel_linear_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString = 'linear';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_linear( )
+';
+	};
+};
+object 'Gsel_sporadic_b' : XmPushButton {
+	arguments {
+	name = 'sporadic';
+	lastGenName = 'Gsel_sporadic_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString = 'sporadic';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_sporadic( )
+';
+	};
+};
+object 'Gsel_solvable_b' : XmPushButton {
+	arguments {
+	name = 'gsel_solvable_b';
+	lastGenName = 'Gsel_solvable_b';
+	generateResName = true;
+	XmNbackground =  * 'color3';
+	XmNlabelString =  * 'solvable';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_solvable( )
+';
+	};
+};
+object 'Gsel_archimed_b' : XmPushButton {
+	arguments {
+	name = 'archimed';
+	lastGenName = 'Gsel_archimed_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_1';
+	XmNlabelString =  * 'reg. solid';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_archimed( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 19;
+	XmNleftAttachment = 5 0 1;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 39;
+	XmNleftAttachment = 5 0 21;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 59;
+	XmNleftAttachment = 5 0 41;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 79;
+	XmNleftAttachment = 5 0 61;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 99;
+	XmNleftAttachment = 5 0 81;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object 'Gsel_button2_form' : XmForm {
+	arguments {
+	name = 'gsel_button2_form';
+	lastGenName = 'Gsel_button2_form';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object 'Gsel_file_b' : XmPushButton {
+	arguments {
+	name = 'gsel_file_b';
+	lastGenName = 'Gsel_file_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'file:';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_file( )
+';
+	};
+};
+object 'Gsel_file_text' : XmTextField {
+	arguments {
+	name = 'gsel_file_text';
+	lastGenName = 'Gsel_file_text';
+	generateResName = true;
+	XmNbackground = 'color1';
+	};
+};
+object 'Gsel_file_select_b' : XmPushButton {
+	arguments {
+	name = 'gsel_file_select_b';
+	lastGenName = 'Gsel_file_select_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'select';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_file_select( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 29;
+	XmNleftAttachment = 5 0 1;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 79;
+	XmNleftAttachment = 5 0 31;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 99;
+	XmNleftAttachment = 5 0 81;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object 'Gsel_button3_form' : XmForm {
+	arguments {
+	name = 'gsel_button3_form';
+	lastGenName = 'Gsel_button3_form';
+	folded = true;
+	generateResName = true;
+	XmNbackground = 'color1';
+	};
+object 'Gsel_generator_b' : XmPushButton {
+	arguments {
+	name = 'gsel_generator_b';
+	lastGenName = 'Gsel_generator_b';
+	generateResName = true;
+	XmNbackground = 'color3';
+	XmNlabelString =  * 'permutation:';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_generator( )
+';
+	};
+};
+object 'Gsel_generator_text' : XmTextField {
+	arguments {
+	name = 'gsel_generator_text';
+	lastGenName = 'Gsel_generator_text';
+	generateResName = true;
+	XmNbackground = 'color1';
+	};
+};
+object '17' : XmLabel {
+	arguments {
+	lastGenName = 'label17';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'i.e. (1 2 3)';
+	XmNfontList = 'bfont';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 29;
+	XmNleftAttachment = 5 0 1;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 79;
+	XmNleftAttachment = 5 0 31;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 99;
+	XmNleftAttachment = 5 0 81;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    };
+};
+object '4' : XmForm {
+	arguments {
+	name = 'g_middle_form';
+	lastGenName = 'form4';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNhighlightPixmap = 'xdref_2';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '10' : XmForm {
+	arguments {
+	name = 'g_left_form';
+	lastGenName = 'form10';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+object '12' : XmFrame {
+	arguments {
+	lastGenName = 'frame12';
+	};
+object '36' : XmForm {
+	arguments {
+	lastGenName = 'form36';
+	XmNbackground = 'color1';
+	};
+object '32' : XmLabel {
+	arguments {
+	lastGenName = 'label32';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'current selection:';
+	XmNfontList = 'bfont';
+	};
+};
+object 'Gsel_list' : XmList {
+	arguments {
+	name = 'gesl_list';
+	lastGenName = 'Gsel_list';
+	generateResName = true;
+	XmNwidth =  * 70;
+	XmNheight = 200;
+	XmNbackground =  * 'color3';
+	XmNvisibleItemCount = 18;
+	XmNfontList = 'bfont';
+	XmNlistSizePolicy = 2;
+	};
+};
+object 'Gsel_delete_item_b' : XmPushButton {
+	arguments {
+	name = 'delete item(s)';
+	lastGenName = 'Gsel_delete_item_b';
+	folded = true;
+	XmNhighlightThickness = 2;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString = 'delete item(s)';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_delete_item( )
+';
+	};
+};
+object 'Gsel_clear_all_b' : XmPushButton {
+	arguments {
+	name = 'clear ALL items !';
+	lastGenName = 'Gsel_clear_all_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString = 'clear ALL items !';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_clear_all( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0 0;
+	XmNleftAttachment = 1 0 0;
+	XmNbottomAttachment = 3 3;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 3 4;
+	XmNtopAttachment = 0 0 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 0 0 0;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '41' : XmForm {
+	arguments {
+	lastGenName = 'form41';
+	XmNbackground = 'color1';
+	};
+object '17' : XmForm {
+	arguments {
+	lastGenName = 'form17';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object '13' : XmFrame {
+	arguments {
+	lastGenName = 'frame13';
+	XmNbackground = 'color1';
+	};
+object '42' : XmForm {
+	arguments {
+	lastGenName = 'form42';
+	XmNbackground = 'color1';
+	};
+object '33' : XmLabel {
+	arguments {
+	lastGenName = 'label33';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'binary operations:';
+	XmNfontList = 'bfont';
+	};
+};
+object 'Gsel_comma_b' : XmPushButton {
+	arguments {
+	name = ',';
+	lastGenName = 'Gsel_comma_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString = ',';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_comma( )
+';
+	};
+};
+object 'Gsel_dir_sum_b' : XmPushButton {
+	arguments {
+	name = 'direct sum';
+	lastGenName = 'Gsel_dir_sum_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_8';
+	XmNlabelString = 'direct sum';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_dir_sum( )
+';
+	};
+};
+object 'Gsel_dir_prod_b' : XmPushButton {
+	arguments {
+	name = 'direct product';
+	lastGenName = 'Gsel_dir_prod_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_9';
+	XmNlabelString = 'direct product';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_dir_product( )
+';
+	};
+};
+object 'Gsel_wreath_b' : XmPushButton {
+	arguments {
+	name = 'wreath product';
+	lastGenName = 'Gsel_wreath_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_16';
+	XmNlabelString = 'wreath product';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_wreath( )
+';
+	};
+};
+object 'Gsel_expo_b' : XmPushButton {
+	arguments {
+	name = 'exponentiation';
+	lastGenName = 'Gsel_expo_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_17';
+	XmNlabelString = 'exponentiation';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_expo( )
+';
+	};
+};
+object 'Gsel_mappings_b' : XmPushButton {
+	arguments {
+	name = 'on mappings n^m';
+	lastGenName = 'Gsel_mappings_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_18';
+	XmNlabelString = 'on mappings n^m';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_mappings( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 4;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 5;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 6;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+object '22' : XmForm {
+	arguments {
+	lastGenName = 'form22';
+	folded = true;
+	XmNbackground = 'color1';
+	};
+object '14' : XmFrame {
+	arguments {
+	lastGenName = 'frame14';
+	XmNbackground = 'color1';
+	};
+object '44' : XmForm {
+	arguments {
+	lastGenName = 'form44';
+	XmNbackground = 'color1';
+	};
+object '34' : XmLabel {
+	arguments {
+	lastGenName = 'label34';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNlabelString =  * 'unary operations:';
+	XmNfontList = 'bfont';
+	};
+};
+object 'Gsel_fixpoint_b' : XmPushButton {
+	arguments {
+	name = 'add a fixpoint';
+	lastGenName = 'Gsel_fixpoint_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_14';
+	XmNlabelString = 'add a fixpoint';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_fixpoint( )
+';
+	};
+};
+object 'Gsel_stabilize_b' : XmPushButton {
+	arguments {
+	name = 'stabilize_point';
+	lastGenName = 'Gsel_stabilize_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_15';
+	XmNlabelString = 'stabilize_point';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_stabilize( )
+';
+	};
+};
+object 'Gsel_2sets_b' : XmPushButton {
+	arguments {
+	name = 'induce on 2-sets';
+	lastGenName = 'Gsel_2sets_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_10';
+	XmNlabelString = 'induce on 2-sets';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_2sets( )
+';
+	};
+};
+object 'Gsel_2tuples_b' : XmPushButton {
+	arguments {
+	name = 'induce on 2-tuples';
+	lastGenName = 'Gsel_2tuples_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_11';
+	XmNlabelString = 'induce on 2-tuples';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_2tuples( )
+';
+	};
+};
+object 'Gsel_inj2tuples_b' : XmPushButton {
+	arguments {
+	name = 'induce on injective 2-tuples';
+	lastGenName = 'Gsel_inj2tuples_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_12';
+	XmNlabelString = 'induce on injective 2-tuples';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_inj2tuples( )
+';
+	};
+};
+object 'Gsel_3sets_b' : XmPushButton {
+	arguments {
+	name = 'induce on 3-sets';
+	lastGenName = 'Gsel_3sets_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_13';
+	XmNlabelString = 'induce on 3-sets';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_3sets( )
+';
+	};
+};
+object '56' : XmForm {
+	arguments {
+	lastGenName = 'form56';
+	XmNbackground = 'color1';
+	};
+object 'I_th_power_b' : XmPushButton {
+	arguments {
+	name = 'i_th_power_b';
+	lastGenName = 'I_th_power_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNhighlightPixmap = 'xdref_13';
+	XmNlabelString =  * 'i-th power';
+	XmNfontList = 'bfont';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_ith( )
+';
+	};
+};
+object 'Gsel_i_th_text' : XmTextField {
+	arguments {
+	name = 'gsel_i_th_text';
+	lastGenName = 'Gsel_i_th_text';
+	generateResName = true;
+	XmNbackground = 'color1';
+	XmNcolumns = 5;
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 45;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 55;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 2;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 3;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 4;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 5;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 3 6;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 3 7;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 5 0 49;
+	XmNtopAttachment = 5 0 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 5 0 99;
+	XmNtopAttachment = 5 0 51;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 49;
+	XmNleftAttachment = 5 0 1;
+	XmNbottomAttachment = 5 0 99;
+	XmNtopAttachment = 5 0 1;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 99;
+	XmNleftAttachment = 5 0 51;
+	XmNbottomAttachment = 5 0 99;
+	XmNtopAttachment = 5 0 1;
+    };
+    };
+};
+object '18' : XmForm {
+	arguments {
+	name = 'g_bottom_form';
+	lastGenName = 'form18';
+	XmNstringDirection = 0;
+	XmNbackground = 'color1';
+	XmNhighlightPixmap = 'xdref_19';
+	XmNbuttonFontList = 'fontlist1';
+	XmNlabelFontList = 'fontlist1';
+	XmNtextFontList = 'fontlist1';
+	XmNmarginWidth = 0;
+	XmNmarginHeight = 0;
+	XmNautoUnmanage = false;
+	};
+	callbacks {
+	XmNunmapCallback = '
+cb_gsel_choose( )
+';
+	};
+object 'Gsel_choose_b' : XmPushButton {
+	arguments {
+	name = 'choose';
+	lastGenName = 'Gsel_choose_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString = 'choose';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_choose( )
+';
+	};
+};
+object 'Gsel_dismiss_b' : XmPushButton {
+	arguments {
+	name = 'dismiss';
+	lastGenName = 'Gsel_dismiss_b';
+	folded = true;
+	XmNstringDirection = 0;
+	XmNbackground = 'color3';
+	XmNlabelString = 'dismiss';
+	XmNfontList = 'fontlist1';
+	};
+	callbacks {
+	XmNactivateCallback = '
+cb_gsel_dismiss( )
+';
+	};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 45;
+	XmNleftAttachment = 5 0 5;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 55;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 5 0 95;
+	XmNleftAttachment = 5 0 5;
+	XmNbottomAttachment = 0 0 0;
+	XmNtopAttachment = 1 0;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNtopAttachment = 3 1;
+    };
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 3 2;
+    };
+    };
+};
+};
+    attachments {
+    attachment {
+	XmNrightAttachment = 1 0;
+	XmNleftAttachment = 1 0;
+	XmNbottomAttachment = 1 0;
+	XmNtopAttachment = 1 0;
+    };
+    };
+};
+};
+end module;

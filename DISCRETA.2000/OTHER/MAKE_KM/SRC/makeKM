@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# usage: makeKM generators-file group-order k t matrix-file
+
+cmd=`kmgen $*`
+eval $cmd

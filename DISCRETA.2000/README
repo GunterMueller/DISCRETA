@@ -1,0 +1,150 @@
+
+
+
+
+ #####      #     ####    ####   #####   ######   #####    ##
+ #    #     #    #       #    #  #    #  #          #     #  #
+ #    #     #     ####   #       #    #  #####      #    #    #
+ #    #     #         #  #       #####   #          #    ######
+ #    #     #    #    #  #    #  #   #   #          #    #    #
+ #####      #     ####    ####   #    #  ######     #    #    #
+
+  -  the design construction tool by
+     Anton Betten <Anton.Betten@uni-bayreuth.de>
+     Evi Haberberger <Evi.Haberberger@uni-bayreuth.de>
+     Reinhard Laue <Reinhard.Laue@uni-bayreuth.de>
+     Alfred Wassermann <Alfred.Wassermann@uni-bayreuth.de>
+
+  -  with additional programs and algorithms by
+     Donald E. Knuth http://www-cs-faculty.stanford.edu/~knuth/
+     Brendan D. McKay <bdm@cs.anu.edu.au>
+
+  -  for more information, see
+     http://www.mathe2.uni-bayreuth.de/~discreta/
+
+
+
+
+########################################################################
+
+
+
+
+
+
+
+
+this is DISCRETA, a package for the construction 
+of combinatorial t-Designs with a prescribed 
+automorphism group.
+
+More information can be found on the DISCRETA homepage:
+http://www.mathe2.uni-bayreuth.de/~discreta/
+
+
+
+
+
+REQUIREMENTS:
+=============
+
+DISCRETA requires Motif, OpenGL and a C++ compiler.
+
+lesstif may be used as a non commercial substitute for Motif,
+Mesa may be used as a non commercial substitute for OpenGL.
+
+
+
+
+
+INSTALLATION:
+=============
+
+
+
+1) 
+unpack and untar 
+discreta.tar.gz
+Assume we now have DISCRETA.2000 as a subdirectory 
+of your current directory. 
+
+2) 
+go into DISCRETA.2000
+
+3) 
+edit the file cshrc and adapt to your needs.
+In particular, make sure that the variables 
+
+DISCRETA_HOME
+MESA_HOME
+MOTIF_HOME
+DISCRETA_CC
+ANSI_CC  
+
+are set properly. 
+
+DISCRETA_HOME should point to the directory DISCRETA.2000
+
+MESA_HOME should point to the directory 
+where the libraries and include files of OpenGL (or Mesa) can be found
+
+MOTIF_HOME should point to the directory 
+where the libraries and include files of MOTIF (or lesstif) can be found
+
+DISCRETA_CC should be the name of your c++ compiler
+
+ANSI_CC shoul be tha name of your ANSI C-compiler
+
+
+
+
+4)
+type
+csh
+
+
+5)
+type:
+source cshrc
+
+6)
+type:
+make
+
+
+7)
+put a line 
+source ~/DISCRETA.2000/cshrc
+into your .cshrc
+
+Modify this line according to the actual place 
+of DISCRETA.2000 on your system.
+This will allow the system to include the path 
+for the discreta executables into its search path.
+The path for executables 
+is something like
+DISCRETA.2000/obj/XXX-YYY-ZZZ/BIN
+
+where XXX, YYY, ZZZ stand for the results of 
+uname -s, uname -m, uname -r, respectively.
+
+
+
+8)
+there is another README in 
+DISCRETA.2000/MAIN
+
+
+Anton Betten 
+October 1998, July 1999, February 2000
+
+_______________________________________________________________________
+
+    UNIVERSITAET  BAYREUTH
+ Lehrstuhl II fuer Mathematik              Tel. +49 (921) 55 - 3384
+         Anton Betten                      Fax  +49 (921) 55 - 3385
+   95440 Bayreuth (Germany)                Anton.Betten@uni-bayreuth.de
+          http://www.mathe2.uni-bayreuth.de/betten/anton.html
+_______________________________________________________________________
+
+

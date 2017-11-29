@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# dpackcover
+
+input=$1
+lambda=$2
+output=solutions
+
+count=10
+seed=1
+maxiter=10000
+tl=5
+verbosity=1
+
+neigh="addone changeone 2 union removeone changeone 2 union correctrandom"
+#neigh="addone removeone correctrandom"
+#neigh="addone removeone largecorrect"
+#neigh="addone changeone 2 union removeone changeone 2 union balance"
+
+attr="add $tl tl 4 penvol 10 tl"
+#attr="add $tl tl 2 penvol 3 tl"
+
+rm $output
+
+counter=1
+while true
+do
+  if test $counter -gt $count; then
+    echo "no solution found (sorry)"
+    exit 1
+  fi
+  cmd="./tabudes discretafile $input neigh \"${neigh}\" algo tabu attr \"${attr}\" lambda $lambda maxpen 0 verbose $verbosity seed $seed discretaoutput $output maxiter $maxiter"
+  echo $cmd
+  eval $cmd
+  if test -e $output; then
+    echo "solution found!"
+    exit 0
+  fi
+  counter=`expr $counter + 1`
+  seed=`expr $seed + 1`
+done

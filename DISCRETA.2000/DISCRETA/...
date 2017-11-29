@@ -1,0 +1,70 @@
+this is DISCRETA, a package for the construction 
+of combinatorial t-Designs with a prescribed 
+automorphism group.
+
+Mor information can be found on the DISCRETA homepage:
+http://www.mathe2.uni-bayreuth.de/betten/DISCRETA/Index.html
+
+
+
+INSTALLATION:
+=============
+
+1) 
+unpack and untar 
+discreta.tar.gz
+Assume we now have DISCRETA.98 as a subdirectory 
+of your current directory. 
+
+2) 
+
+go into DISCRETA.98
+
+3)
+type
+csh
+
+4)
+type:
+source cshrc
+
+5)
+type:
+make
+
+
+6)
+put a line 
+source ~/DISCRETA.98/cshrc
+into your .cshrc
+Modify this line according to the actual place 
+of DISCRETA.98 on your system.
+This will allow the system to include the path 
+for the discreta executables into its search path.
+The path for executables 
+is something like
+DISCRETA.98/obj/XXX/BIN
+
+where XXX stands for the type of your system
+(=sgi, =linux, =dec, =hp, =sun etc)
+
+
+
+7)
+there is another README in 
+DISCRETA.98/MAIN
+
+
+Anton Betten 
+October 1998
+
+_______________________________________________________________________
+
+    UNIVERSITAET  BAYREUTH
+ Lehrstuhl II fuer Mathematik              Tel. +49 (921) 55 - 3384
+         Anton Betten                      Fax  +49 (921) 55 - 3385
+   95440 Bayreuth (Germany)                Anton.Betten@uni-bayreuth.de
+          http://www.mathe2.uni-bayreuth.de/betten/anton.html
+_______________________________________________________________________
+
+

@@ -1,0 +1,8 @@
+Do not remove this file !
+DISCRETA checks availability of 
+its library by looking at this file !
+The discreta library is
+$DISCRETA_HOME/lib
+
+$DISCRETA_HOME should be set in DISCRETA/cshrc
+

@@ -1,0 +1,46 @@
+This is TeX, Version 3.14159 (C version 6.1) (format=tex 97.9.26)  21 NOV 1997 11:20
+**possolve.c
+(possolve.c
+Babel <v3.6h> and hyphenation patterns for american, german, loaded.
+(/usr/local/teTeX/texmf/tex/latex/local/cnoweb.tex [c-no-web vers 1.6]
+\oddsideshift=\dimen16
+\evensideshift=\dimen17
+\rightmarginslop=\dimen18
+\blockindent=\dimen19
+\longblockindent=\dimen20
+\sectionskip=\skip18
+\cfile=\write0
+\leftadjust=\dimen21
+\itemindent=\dimen22
+\job=\toks12
+\title=\toks13
+\synopsis=\toks14
+)
+(brute.h [1]
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]\eleventt extern void puteqns(int *lo,int *hi,int numvar,int *lorhs,int *hirh
+s,equation 
+
+\hbox(7.60416+2.43333)x444.0
+.\hbox(0.0+0.0)x0.0
+.\eleventt e
+.\eleventt x
+.\eleventt t
+.\eleventt e
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+[]\eleventt extern int divideeqns(int *lorhs, int *hirhs, equation *eqn, int *n
+eqn, int 
+
+\hbox(7.60416+2.43333)x444.0
+.\hbox(0.0+0.0)x0.0
+.\eleventt e
+.\eleventt x
+.\eleventt t
+.\eleventt e
+.etc.
+
+) [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] (possolve.toc) [-1] )
+Output written on possolve.dvi (13 pages, 29152 bytes).

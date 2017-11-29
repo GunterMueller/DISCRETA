@@ -1,0 +1,110 @@
+\begin{thebibliography}{10}
+
+\bibitem{Alltop75}
+W.~O. Alltop.
+\newblock Extending $t$-designs.
+\newblock {\em J. Combinatorial Theory Ser. A}, 18:177--186, 1975.
+
+\bibitem{BettenCodes98}
+Anton Betten, Harald Fripertinger, Adalbert Kerber, Alfred Wassermann, and
+  Karl-Heinz Zimmermann.
+\newblock {\em Codierungstheorie -- Konstruktion und Anwendung linearer Codes}.
+\newblock Springer Verlag, Berlin, Heidelberg, New-York, 1998.
+
+\bibitem{Brownetal89a}
+Cynthia~A. Brown, Larry Finkelstein, and Jr. Purdom, Paul~W.
+\newblock A new base change algorithm for permutation groups.
+\newblock {\em SIAM J. Comput.}, 18(5):1037--1047, 1989.
+
+\bibitem{Butler91b}
+G.~Butler.
+\newblock {\em Fundamental algorithms for permutation groups}, volume 559 of
+  {\em Lecture Notes in Computer Science}.
+\newblock Springer-Verlag, Berlin, 1991.
+
+\bibitem{Hall59}
+Marshall {Hall, Jr.}
+\newblock {\em The Theory of Groups}.
+\newblock Macmillan Co., New York, 1959.
+
+\bibitem{Huppert67}
+B.~Huppert.
+\newblock {\em Endliche {G}ruppen. {I}}.
+\newblock Springer-Verlag, Berlin, 1967.
+\newblock Die Grundlehren der Mathematischen Wissenschaften, Band 134.
+
+\bibitem{HuppertBlackburn82b}
+Bertram Huppert and Norman Blackburn.
+\newblock {\em Finite groups. {I}{I}{I}}, volume 243 of {\em Grundlehren der
+  Mathematischen Wissenschaften [Fundamental Principles of Mathematical
+  Sciences]}.
+\newblock Springer-Verlag, Berlin, 1982.
+
+\bibitem{Jerrum86}
+Mark Jerrum.
+\newblock A compact representation for permutation groups.
+\newblock {\em J. Algorithms}, 7(1):60--78, 1986.
+
+\bibitem{Kerber91}
+Adalbert Kerber.
+\newblock {\em Algebraic combinatorics via finite group actions}.
+\newblock Bibliographisches Institut, Mannheim, 1991.
+
+\bibitem{Koehler89}
+Egmont K{\"o}hler.
+\newblock Allgemeine {S}chnittzahlen in $t$-designs.
+\newblock In {\em Proceedings of the Oberwolfach Meeting ``Kombinatorik''
+  (1986)}, volume~73, pages 133--142, 1988/89.
+
+\bibitem{Kung81}
+Joseph P.~S. Kung.
+\newblock The cycle structure of a linear transformation over a finite field.
+\newblock {\em Linear Algebra Appl.}, 36:141--155, 1981.
+
+\bibitem{Lueneburg87a}
+Heinz L{\"u}neburg.
+\newblock {\em On the rational normal form of endomorphisms}.
+\newblock Bibliographisches Institut, Mannheim, 1987.
+\newblock A primer to constructive algebra.
+
+\bibitem{Mendelsohn71}
+N.~S. Mendelsohn.
+\newblock Intersection numbers of $t$-designs.
+\newblock In {\em Studies in Pure Mathematics (Presented to Richard Rado)},
+  pages 145--150. Academic Press, London, 1971.
+
+\bibitem{Plesken82}
+Wilhelm Plesken.
+\newblock {Counting with groups and rings.}
+\newblock {\em J. Reine Angew. Math.}, 334:40--68, 1982.
+
+\bibitem{Schmalz90}
+Bernd Schmalz.
+\newblock Verwendung von {U}ntergruppenleitern zur {B}estimmung von
+  {D}oppelnebenklassen.
+\newblock {\em Bayreuth. Math. Schr.}, 31:109--143, 1990.
+
+\bibitem{Schmalz92b}
+Bernd Schmalz.
+\newblock $t$-{D}esigns zu vorgegebener {A}utomorphismengruppe.
+\newblock {\em Bayreuth. Math. Schr.}, 41:1--164, 1992.
+\newblock Dissertation, Universit\"at Bayreuth, Bayreuth, 1992.
+
+\bibitem{Schmalz93}
+Bernd Schmalz.
+\newblock The $t$-designs with prescribed automorphism group, new simple
+  $6$-designs.
+\newblock {\em J. Combin. Des.}, 1(2):125--170, 1993.
+
+\bibitem{VanLintWilson92}
+J.~H. van Lint and R.~M. Wilson.
+\newblock {\em A course in Combinatorics}.
+\newblock Cambridge University Press, Cambridge, 1992.
+
+\bibitem{TranVanTrungetal96}
+Tran van Trung, Qiu-rong Wu, and Dale~M. Mesner.
+\newblock High order intersection numbers of $t$-designs.
+\newblock {\em J. Statist. Plann. Inference}, 56(2):257--268, 1996.
+\newblock Special issue on orthogonal arrays and affine designs, Part II.
+
+\end{thebibliography}

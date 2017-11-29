@@ -1,0 +1,187 @@
+CREATE:
+======
+
+README -  DBCREATE
+
+Erlaeuterungen zum Aufruf von DBCREATE
+
+Zum Erzeugen einer Tabelle braucht man ein Textdatei mit
+der Definition der neuen Tabelle. Als Beispiel habe ich die
+Datei MOLGENDB.DEF benutzt.
+
+Die erste Zeile enthaelt den Namen der neuen Tabellendatei.
+Dieser ist ohne Erweiterung anzugeben. Hier: molgendb
+
+Die beiden ersten Zeichen der zweiten Zeile sind die
+Zugriffsrechte fuer Lesen und Aenderen.
+Diese koennen Werte zwischen 0 und 9 annehmen, was bedeutet,
+dass der Benutzer mind. die jeweilige Berechtigungsstufe
+haben muss, um Zugriff auf die Tabelle zu erhalten.
+Weiterhin ist noch - zulaessig, was bedeutet, dass die Tabelle
+fuer die jeweilige Operation gaenzlich gesperrt ist.
+Werte hier: 00
+
+In der 2. Zeile folgt nun nach einem Leerzeichen die
+Angabe der Seitengroesse in Byten. Hier: 8192
+Es folgen die Angaben ueber die Datensatzgroesse,
+Position des Infoteils und Laenge des Infoteils in Bytes.
+Wenn die Satzlaenge wie hier variabel ist, so ist fuer
+alle drei Werte 0 anzugeben.
+
+In den nachfolgenden Zeilen erfolgt die Definition der
+Indexkomponenten. Diese sind wie folgt aufgebaut.
+I xx nnnnnnnnnn c p f       ...
+
+xx     gibt die Typnummer an (siehe unten: verfuegbare Indextypen)
+nnnnn  ist der Indexname (fuer Suchzugriff siehe DBSELECT)
+c      Anzahl der Elemente von jeweiligen Typ
+p      Position der Komponente rel. zum Satzanfang (nur bei fester Satzlaenge)
+f      0, derzeit nicht benutzt
+...    Hier kann ein Kommentar zur Indexkomponete eingetragen werden
+       (wird fuer die Verwaltung nicht benutzt)
+
+molgendb
+00 8192 0 0 0
+I 9  Formel     0 0 0      Summenformel
+I 1  #C         1 0 0      Anzahl C-Atome, 1
+I 1  #O         1 0 0      Anzahl O-Atome
+I 1  #N         1 0 0      Anzahl N-Atome
+I 1  #BR        1 0 0      Anzahl Br-Atome
+I 1  #CL        1 0 0      Anzahl Cl-Atome
+I 1  #I         1 0 0      Anzahl I-Atome
+I 1  #F         1 0 0      Anzahl F-Atome
+I 1  #H         1 0 0      Anzahl H-Atome
+I 9  Name       0 0 0      Molekuelname
+I 10 ID         0 0 0      Molekuel ID
+
+Derzeit verfuegbare Indextypen
+
+ 1 unsigend char
+ 2 signed char
+ 3 unsigned int
+ 4 signed int
+ 5 unsigned long
+ 6 signed long
+ 7 float
+ 8 double
+ 9 string (char-Feld)
+10 Zaehler 0 Autoincrement
+11 Zaehler 1 Autoincrement
+12 Zaehler 2 Autoincrement
+13 Zaehler 3 Autoincrement
+14 Zaehler 4 Autoincrement
+15 Zaehler 5 Autoincrement
+16 Zaehler 6 Autoincrement
+17 Zaehler 7 Autoincrement
+18 Zaehler 8 Autoincrement
+19 Zaehler 9 Autoincrement
+20 Zaehler 0 Autodecrement
+21 Zaehler 1 Autodecrement
+22 Zaehler 2 Autodecrement
+23 Zaehler 3 Autodecrement
+24 Zaehler 4 Autodecrement
+25 Zaehler 5 Autodecrement
+26 Zaehler 6 Autodecrement
+27 Zaehler 7 Autodecrement
+28 Zaehler 8 Autodecrement
+29 Zaehler 9 Autodecrement
+
+Ergaenzungen
+
+Mit set DB_DEF_PATH=... kann man den Suchpfad fuer
+die Definitionsdateien einstellen. DBCREATE sucht
+dann zuerst im aktuellen Verzeichnis nach der Datei,
+und wenn sie dort nicht zu finden ist im Verzeichnis,
+das per DB_DEF_PATH angegeben wurde.
+
+Mit set DB_LANGUAGE=DEUTSCH kann die Ausgabe der
+Meldungen auf Deutsch umgestellt werden.
+
+INSERT:
+======
+DBINSERT
+
+Einfuegen von Datensaetzen
+
+1 Datei mit den Datensaetzen im DB-Format schreiben
+2 dbinsert from:<infile> to:<tabelle> aufrufen
+Fertig
+
+Zu 1 Es gibt zwei Arten von Datensaetzen. Solche mit
+fester und solche mit variabler Satzlaenge. Diese
+haben unterschiedliche Formate.
+
+Feste Laenge: Hier werden die Felder einfach
+hintereinander gschrieben (mit ihrer jeweiligen
+festen Laenge). Die Positionen der Felder stehen
+fest, somit kann leicht auf diese zugegriffen
+werden.
+
+Variable Laenge: Hier geht dem Datensatz ein Postions-
+vektor voraus. Dieser besteht aus einem Feld von
+unsigned Werten mit Indexanzahl+2 Eintraegen. Danach
+folgen die einzelnen Felder.
+
+Pos[0] = Gesamtlaenge des Datensaetzes in Bytes)
+         (inkl. des Posvektors)
+Pos[1] ... Pos[Indexanzahl] Position des einzelnen
+         Indexfelder
+Pos[Indexanzahl+1] Position des Infoteils
+
+Bespiele fuer die Konvertierung ins DB-Format und
+zurueck sind in den Programmen zur PLZ-Umstellung
+zu finden. PLZTOBIN und PLZTOTXT
+
+Es koennen Datensaetze auch direkt, ohne vorherige
+Konvertierung eingefuegt werden. Hierzu ist die
+Einleseroutine in FIO Parameter entsprechend 
+zu setzen. Es muss eine eigene Funktion geschrieben
+werden, die den Datensatz in den Puffer des
+FIO Parameters im DB-Format einliest.
+
+
+REMOVE:
+=======
+DBREMOVE
+
+Loeschen von Datensaetzen
+
+Vorgehensweise zum Loeschen eines Datensatzes
+
+1 Datei mit diesem Datensatz im DB-Format schreiben
+2 DBREMOVE <datname> aufrufen
+
+Vorgehensweise zum Loeschen von Bereichen
+
+1 Definition einer Suchanfrage
+2 DBSELECT <sdf> aufrufen
+3 DBREMOVE <ergebnisdatei der suchanfrage> aufrufen
+
+
+SELECT:
+======
+DBSELECT
+
+Suchen in Tabellen
+
+Vorgehensweise:
+
+1 Anlegen der Datei mit der Suchdefinition
+2 DBSELECT <suchdefdatei> aufrufen
+
+Mit DBSELECT bekommt man die Syntax der
+Suchdefinition angezeigt. Ein Beispiel
+ist in TEST01\SDF zu finden.
+Die Datensaetze werden im (binaeren) DB-Format
+geschrieben. Es kann jedoch im SEARCH Parameter
+eine eigene Ausgabefunktion gesetzt werden.
+Alle gefundenen Datensaetze werden an diese
+Funktion uebergeben und koennen dann in der
+gewuenschten, eigenen Formatierung ausgegeben
+werden.
+
+
+
+
+
+

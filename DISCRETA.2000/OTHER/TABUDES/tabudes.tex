@@ -1,0 +1,440 @@
+\documentclass[12pt,a4paper]{article}
+
+\begin{document}
+
+\makeatletter
+\newenvironment{owndescription}
+               {\list{}{\labelwidth\z@ \itemindent-\leftmargin
+                        \let\makelabel\owndescriptionlabel}}
+               {\endlist}
+\newcommand*\owndescriptionlabel[1]{\hspace\labelsep
+  \normalfont #1}
+\makeatother
+
+\title{Using \texttt{tabudes} with \texttt{Discreta}}
+
+\author{Kari J. Nurmela\\
+Department of Computer Science and Engineering\\
+Helsinki University of Technology\\
+P.O.\ Box 5400\\
+FIN--02015 HUT\\
+Finland\\e-mail: \texttt{Kari.Nurmela@hut.fi}}
+
+\date{\today}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+This document describes how to search combinatorial designs with
+with the help of \texttt{tabudes} and \texttt{Discreta}.
+
+\section{Using the program}
+
+\newcommand{\Var}[1]{\textbf{#1}}
+\newcommand{\Val}[1]{\textit{#1}}
+\newcommand{\NIY}{\textit{(not implemented yet)}}
+
+The \texttt{tabudes} program is invoked from command line with the
+following syntax:
+\begin{quote}
+  \Var{tabudes}\ \Val{variable1}\ \Val{value1}\ \Val{variable2}\
+  \Val{value2}\ \ldots
+\end{quote}
+Each variable is followed by its value. We now describe each variable
+and how they define the search that the program performs. The variable
+names and keywords recognized by the program are set in \Var{bold},
+the parameters (integers if not otherwise stated) are written in
+\Val{italics}.
+
+\subsection{Common variables}
+
+\begin{owndescription}
+\item[\Var{discretafile}] The file where the Kramer-Mesner matrix (and
+  relevant information) is stored by \texttt{Discreta}. This option
+  must always be specified.
+\item[\Var{algo}] The search algorithm. Must be specified and can be
+  one of the following:
+  \begin{owndescription}
+  \item[\Val{tabu}] Tabu search. See section~\ref{sec:tabu}.
+  \item[\Val{SA}] Simulated annealing. See section~\ref{sec:sa}.
+  \item[\Val{deluge}] Great deluge. See section~\ref{sec:deluge}.
+  \item[\Val{record}] Record-to-record travel. See
+    section~\ref{sec:record}.
+  \item[\Val{threshold}] Threshold accepting. See
+    section~\ref{sec:threshold}.
+  \item[\Val{local}] Local optimization. Makes penalty-improving moves
+    until no such move exists. See section~\ref{sec:local}.
+  \item[\Val{iterpen}] Iterate within penalty limits. See
+    section~\ref{sec:iterpen}.
+  \item[\Val{rwalk}] Random walk. See section~\ref{sec:rwalk}.
+  \item[\Val{rwalkpen}] Random walk within penalty limits. See
+    section~\ref{sec:rwalkpen}.
+  \item[\Val{none}] No search is performed.
+  \end{owndescription}
+\item[\Var{check}] If \Val{true}, and a solution satisfying the
+  constraints (\Var{minpen}, \Var{maxpen}, \Var{minvol}, \Var{maxvol})
+  is achieved, then the integrity, penalty, and
+  volume of the solution are checked before printing (or saving) the
+  solution. Default is true.
+\item[\Var{maxpen}] The maximum acceptable penalty for a solution to
+  be shown and/or saved to a file. Default maximum value of the
+  penalty data type.
+\item[\Var{minpen}] The minimum acceptable penalty for a solution to
+  be shown and/or saved to a file. Default minimum value of the
+  penalty data type.
+\item[\Var{maxvol}] The maximum acceptable volume for a solution to
+  be shown and/or saved to a file. Default maximum value of the
+  volume data type.
+\item[\Var{minvol}] The minimum acceptable volume for a solution to
+  be shown and/or saved to a file. Default minimum value of the
+  volume data type.
+\item[\Var{discretapenalty}] If the final solution has penalty less
+  than or equal to \Var{discretapenalty}, then the solution vector (in
+  a format that can be read back to \texttt{Discreta}) is written in
+  file \Var{discretaoutput}, if given.
+\item[\Var{discretaoutput}] The name of the file where the final
+  solution (if penalty and volume limits are fulfilled) is saved in
+  a format that can be read by Discreta.
+\item[\Var{outfile}] Optional name of the file where the final solution is
+  saved (in a format that can be later read again to \texttt{tabudes})
+  if it fulfills the penalty and volume limits (\Var{maxpen},
+  \Var{minpen}, \Var{maxvol}, \Var{minvol}).
+\item[\Var{verbose}] Controls the verbosity of the search process: 0
+  prints only a little of information of the progress of the search,
+  larger values print more. Default 0.
+\item[\Var{seed}] The seed for the pseudorandom number generator. If
+  not given, then a seed value is taken from the system clock.
+\item[\Var{coverpenalty}] Determines the penalty function. Can be one
+  of the following:
+  \begin{owndescription}
+  \item[\Val{design}] Default. If an orbit is covered $n$ times, and
+    it should be covered $\lambda$ times, penalty is increased by
+    $\left| n - \lambda \right|$.
+  \item[\Val{cover}] The same as \Val{design}, except that only orbits
+    that are covered too few times are considered.
+  \item[\Val{pack}] The same as \Val{design}, except that only orbits
+    that are covered too many times are considered.
+  \item[\Val{asymhigh}] The same as \Val{design}, except that each orbit
+    that is covered too many times adds another \Var{asymadd} to the
+    penalty.
+  \item[\Val{asymlow}] The same as \Val{design}, except that each orbit
+    that is covered too few times adds another \Var{asymadd} to the
+    penalty.
+  \end{owndescription}
+\item[\Var{asymadd}] The number that is added to the penalty for each
+  $t$-set whose coverage is less or more than $\lambda$ when
+  \Var{coverpenalty} is \Val{asymlow} or \Val{asymhigh}, respectively.
+\item[\Var{lambda}] The number the orbits of $t$-sets are to be
+  covered (upper bound for packings, lower bound for coverings).
+\item[\Var{order}] If \Var{discretafile} does not contain the ``\%
+  order:'' line in the preamble, the order of the symmetry group can
+  be given on the command line.
+\end{owndescription}
+
+\subsection{Algorithm parameters}
+
+Depending on the search algorithm used, there are several parameters
+that can be used.
+
+\subsubsection{Tabu search}
+\label{sec:tabu}
+
+Tabu search parameters define the type of tabu list, the attributes
+used, and so on.
+
+\begin{owndescription}
+\item[\Var{attr}] Determines the attributes used for the tabu list.
+  The value of \Var{attr} is a white space separated string which is
+  interpreted in postfix notation according the following patterns:
+  \begin{owndescription}
+  \item[\Var{remove}] Push the following condition on the stack: if an
+    orbit is added to the solution, then the condition forbids the
+    removal of the same orbit.
+  \item[\Var{add}] Push the following condition on the stack: if an
+    orbit is removed from the solution, then the condition forbids the
+    addition of the same orbit.
+  \item[\Var{addall}] Push the following condition on the stack: if a
+    set of orbitss is removed from the solution, then the condition
+    forbids the addition of exactly the same set of orbits.
+  \item[\Var{index}] Push the following condition on the stack: if the
+    orbit at position $i$ in the solution vector is changed, the
+    condition prevents the change of the same position.
+  \item[\Var{change}] Push the following condition on the stack: if a
+    move removes orbit $a$ and adds orbit $b$, then another move
+    cannot remove $b$ and add $a$.
+  \item[\Val{loop} \Var{penvol}] Push the following condition on the
+    stack: the last \Val{loop} penalties and volumes on the
+    search path are recorded. If the next move would result in an
+    identical sequence of penalties and volumes, it is forbidden.
+  \item[\Val{n} \Var{and}] Pop \Val{n} conditions from the stack. Push
+    a condition that composes the popped conditions.
+  \item[\Val{l} \Var{tl}] Pop a condition from the stack. Add the
+    condition with constant tabu tenure \Val{l} to the tabu list
+    structure.
+  \item[\Val{l} \Val{n} \Var{tls}] Pop \Val{n} conditions from the
+    stack. Add the conditions with constant tabu tenure \Val{l} to the
+    tabu list structure.
+  \item[\Val{wl} \Var{dt} \Val{tl1} \Val{tl2}\ldots \Val{tlm}
+    \Var{dtl}] Pop a condition from the stack. Add the condition to
+    the tabu list structure with a dynamic tabu tenure: if the cost in
+    the two latest successive time windows of length \Val{wl} are
+    similar, then the tabu
+    tenure is changed to the next tenure in the list.
+  \item[\Val{cc} \Var{ct} \Val{tl1} \Val{tl2}\ldots \Val{tlm}
+    \Var{ctl}] Pop a condition from the stack. Add the condition to
+    the tabu list structure with a cyclic dynamic tabu tenure: after
+    each \Val{cc} iterations the tabu tenure is changed to the next
+    tenure on the list.
+  \item[\Var{neigh}] Enables the special condition(s) generated by the
+    neighborhood(s). (Not currently used.)
+  \end{owndescription}
+  In the beginning the stack is empty. After interpreting the value
+  string of \Var{attr} the stack should also be empty and a number of
+  attribute/tenure pairs should have been added to the tabu list
+  structure.
+\item[\Var{maxiter}] The maximum number of moves made during the
+  search.
+\item[\Var{endlimit}] If a solution is found with penalty at most
+  \Var{endlimit}, the search is terminated.
+\item[\Var{largeremaining}] If more than one neighborhood is given:
+  the search is normally done using only the first neighborhood.
+  However, when the current penalty equals to the best penalty found
+  during this search process, then at most \Var{largeremaining} moves
+  are made using all the neighborhoods. If equally good moves are
+  found, those in an earlier neighborhood in the neighborhood list are
+  preferred. See also \Var{smallpenalty}.
+\item[\Var{smallpenalty}] If the penalty is larger than
+  \Var{smallpenalty}, then only the first neighborhood is used, even
+  if the current penalty equals to the best penalty found during this
+  search process.
+\end{owndescription}
+
+\subsubsection{Simulated annealing}
+\label{sec:sa}
+
+\begin{owndescription}
+\item[\Var{IT}] Initial temperature.
+\item[\Var{IP}] Tries to find approximate initial temperature such
+  that the probability of accepting a random move in the initial
+  solution is \Var{IP}.
+\item[\Var{L}] The number of iterations at each temperature.
+\item[\Var{LF}] The number of iterations at each temperature can be
+  alternatively specified by \Var{LF}: the number of iterations is the
+  size of the neighborhood multiplied by \Var{LF}.
+\item[\Var{CF}] The temperature is reduced by multiplying the old
+  temperature by \Var{CF}.
+\item[\Var{frozen}] The search is terminated when \Var{frozen}
+  successive temperatures have passed without a single
+  penalty-changing move.
+\item[\Var{endlimit}] If a solution is found with penalty at most
+  \Var{endlimit}, the search is terminated.
+\end{owndescription}
+
+\subsubsection{Great deluge}
+\label{sec:deluge}
+
+\begin{owndescription}
+\item[\Var{frozen}] If no change in penalty (while the water level
+  equals the penalty) during \Var{frozen} candidate moves, the search
+  is terminated, default 1000.
+\item[\Var{down}] The amount of water level change after each penalty
+  change calculation, default 0.001.
+\item[\Var{initlevel}] The initial water level, default is the penalty
+  of the initial solution.
+\item[\Var{endlimit}] If a solution is found with penalty at most
+  \Var{endlimit}, the search is terminated.
+\end{owndescription}
+
+\subsubsection{Record-to-record travel}
+\label{sec:record}
+
+\begin{owndescription}
+\item[\Var{frozen}] If no new record has been found during
+  \Var{frozen} candidate moves, the search is terminated, default
+  1000.
+\item[\Var{deviation}] Moves which result in a solution whose penalty
+  deviates from the current record at most by \Var{deviation} are
+  accepted.
+\item[\Var{endlimit}] If a solution is found with penalty at most
+  \Var{endlimit}, the search is terminated.
+\item[\Var{specialrecord}] If not given, the neighborhood is
+  initialized after each accepted move. If \Var{specialrecord} is
+  given, the neighborhood is initialized after \Var{specialrecord}
+  candidate moves. Useful for example when using neighborhoods like
+  \Var{correct}.
+\end{owndescription}
+
+\subsubsection{Threshold accepting}
+\label{sec:threshold}
+
+\begin{owndescription}
+\item[\Var{frozen}] The search is terminated when \Var{frozen}
+  successive temperatures have passed without a single
+  penalty-changing move.
+\item[\Var{threshold}] Initial threshold.
+\item[\Var{L}] If specified, \Var{L} moves are tried each time before
+  changing the threshold.
+\item[\Var{LF}] If specified, \Var{LF} times the neighborhood size
+  moves are tried each time before changing the threshold.
+\item[\Var{down}] The decrement of the threshold.
+\item[\Var{endlimit}] If a solution is found with penalty at most
+  \Var{endlimit}, the search is terminated.
+\end{owndescription}
+
+\subsubsection{Iterate within penalty limits}
+\label{sec:iterpen}
+
+This algorithm makes random moves by finding all the moves in the
+current neighborhood that satisfy the penalty limits, and then by
+taking one of them until no such moves can be found or \Var{maxiter}
+moves have been made.
+
+\begin{owndescription}
+\item[\Var{maxiter}] At most \Var{maxiter} moves are made.
+\item[\Var{minpen}] The smallest acceptable penalty.
+\item[\Var{maxpen}] The largest acceptable penalty.
+\end{owndescription}
+
+\subsubsection{Random walk}
+\label{sec:rwalk}
+
+Makes random moves.
+
+\begin{owndescription}
+\item[\Var{maxiter}] The walk is terminated when the number of moves
+  made reaches \Var{maxiter}.
+\end{owndescription}
+
+\subsubsection{Random walk within penalty limits}
+\label{sec:rwalkpen}
+
+This algorithm tries random moves and accepts those that satisfy the
+penalty limits. The iteration is continued until no such moves can be
+found or \Var{maxiter} moves have been made.
+
+\begin{owndescription}
+\item[\Var{maxiter}] At most \Var{maxiter} moves are made.
+\item[\Var{minpen}] The smallest acceptable penalty.
+\item[\Var{maxpen}] The largest acceptable penalty.
+\end{owndescription}
+
+\subsubsection{Local optimization}
+\label{sec:local}
+
+\subsection{Initial solution}
+
+\begin{owndescription}
+\item[\Var{initsol}] Specifies the type of the initial solution. Can
+  be one of the following (default is \Val{atleastvol}):
+  \begin{owndescription}
+  \item[\Val{atleastvol}] Orbits are added to the solution until the
+    volume is \Var{vol} or more.
+  \item[\Val{atmostvol}] Orbits are added until the next random patch
+    would result exceeding the volume specified by \Var{vol}.
+  \item[\Val{atmostpen}] Orbits are added until no more patches can
+    be added without exceeding the penalty specified by \Var{pen}.
+  \item[\Val{read}] Read the initial solution from the file specified
+    by \Var{infile}. (The file is written earlier using
+    \Var{outfile}.)
+  \item[\Val{coverage}] Make initial solution as follows: start with
+    an empty solution and add random orbits until the total coverage
+    is equal to or greater than \Var{lambda} times the number of
+    orbits of $t$-sets.
+  \item[\Val{volumes}] Pick random orbits according to parameter
+    \Var{volcounts}.
+  \item[\Val{empty}] Start the search with empty initial solution.
+  \end{owndescription}
+\item[\Var{vol}] See owndescription of
+  \Var{initsol}$\in\{$\Val{atleastvol}, \Val{atmostvol}$\}$ above.
+\item[\Var{infile}] The file where the initial solution is read from
+  when \Var{initsol}$=$\Val{read}.
+\item[\Var{partsize}] See owndescription of \Val{initsol}=\Val{partition}
+  above (and owndescription of \Var{partition} in
+  Section~\ref{sec:neighborhood} below).
+\item[\Var{volcounts}] The value of \Var{volcounts} is a
+  space-separated string of form ``$v_1$ $c_1$ $v_2$ $c_2$ \ldots
+  $v_n$ $c_n$''. The initial solution (\Var{initsol}$=$\Val{volumes})
+  is formed by selecting $c_1$ orbits of volume $v_1$, $c_2$ orbits of
+  volume $v_2$, etc.
+\end{owndescription}
+
+\subsection{Neighborhood}
+\label{sec:neighborhood}
+
+The neighborhood(s) used by the search algorithm are defined by
+setting the value of \Var{neigh}. The value is a string consisting of
+space-separated keywords and possibly numerical values. Neighborhoods
+are defined in a postfix notation. The following patterns are used:
+
+\begin{owndescription}
+\item[\Var{changeone}] Push a neighborhood on the stack: one orbit is
+  changed to another.
+\item[\Var{vchangeone}] Push a neighborhood on the stack: one orbit is
+  changed to another with equal volume.
+\item[\Val{ncount} \Var{addmany}] Push a neighborhood on the
+  stack: \Val{ncount} orbits are added.
+\item[\Val{ncount} \Var{addmanyunique}] Push a neighborhood on the
+  stack: \Val{ncount} orbits (with no repetitions) are added.
+\item[\Var{addone}] Push a neighborhood on the stack: one orbit is added.
+\item[\Val{ncount} \Var{removemany}] Push a neighborhood on the
+  stack: \Val{ncount} orbits are removed.
+\item[\Var{removeone}] Push a neighborhood on the stack: remove one orbit.
+\item[\Val{ncount} \Var{changemany}] Push a neighborhood on the
+  stack: \Val{ncount} orbits are changed.
+\item[\Val{ncount} \Var{changemanyunique}] Push a neighborhood on
+  the stack: \Val{ncount} patches are changed (no repetions among the
+  new patches).
+\item[\Var{empty}] Push an empty (no moves) neighborhood.
+\item[\Val{n} \Var{composite}] Pop \Val{n} neighborhoods off the stack
+  and push a neighborhood where each move is made by appending the moves
+  in the \Val{n} subneighborhoods.
+\item[\Val{n} \Var{union}] Pop \Var{n} neighborhoods off the stack and
+  push a neighborhood whose moves are the union of the \Val{n}
+  subneighborhoods.
+\item[\Var{balance}] Pop neighborhoods \Var{decN} and \Var{incN}. Push
+  neighborhood which finds a too few times covered orbit $a$ of
+  $t$-set and a too many times covered orbit ($b$). Push a
+  neighborhood that selects a move in \Var{incN} that increases the
+  covererage of orbit $a$, and a move in \Var{decN} that decreases the
+  coverage of orbit $b$ and composes these two moves.
+\item[\Var{largebalance}] Pop neighborhoods \Var{decN} and \Var{incN}.
+  Push neighborhood which finds too few times covered orbits and too
+  many times covered orbits. The neighborhood then selects a move in
+  \Var{incN} that increases the covererage of a too few times covered
+  orbit, and a move in \Var{decN} that decreases the coverage of a too
+  many time covered orbit, and composes these two moves.
+\item[\Var{correct}] Pop neighborhoods
+  \Var{decN} and \Var{incN}. Push a neighborhood which finds the next
+  too few or too many times covered orbit and then tries to increase
+  the coverage (by \Var{incN}) or decrease the coverage (by
+  \Var{decN}), respectively.
+\item[\Var{correctrandom}] \emph{Covering problems:} The same as
+  \Var{correct}, except that instead of going cyclically through the
+  points, the next too few or too many times covered orbit is selected
+  at random.
+\item[\Var{largecorrect}] Pop neighborhoods \Var{decN} and \Var{incN}. Push
+  neighborhood which allows any moves of \Var{decN} that decrease the
+  coverage of an orbit covered too many times, or moves of \Var{incN}
+  that increase the coverage of an orbit covered too few times.
+\item[\Val{n} \Val{goal} \Var{select}] Pop \Var{n}
+  neighborhoods. Push a neighborhood that works as follows: before
+  each major iteration of the search algorithm, check which of the
+  \Var{n} neighborhoods has the size closest to \Var{goal}. Use then
+  this neighborhood until the next major iteration.
+\end{owndescription}
+
+After the value string of \Var{neigh} has been parsed, there should be
+a number of neighborhoods (usually 1) on the stack. These
+neighborhood(s) are used in the search.
+
+\subsection{Examples}
+\label{sec:examples}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

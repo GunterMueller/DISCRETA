@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# searches designs by varying the penalty function during the search
+
+input=$1
+lambda=$2
+seed=$3
+output=solutions
+tmpsol=tmpsol.$$.out
+asymadd=30
+cycles=100
+maxiter=10000
+tl=6
+verbosity=0
+
+#neigh="addone changeone 2 union removeone changeone 2 union correctrandom"
+neigh="addone removeone correctrandom"
+#neigh="addone removeone largecorrect"
+#neigh="addone changeone 2 union removeone changeone 2 union balance"
+
+attr="add $tl tl"
+#attr="add $tl tl 2 penvol 3 tl"
+
+rm $output
+
+bas="tabudes discretafile $input neigh \"${neigh}\" algo tabu attr \"${attr}\" lambda $lambda endlimit 0 maxpen 9999 verbose $verbosity discretaoutput $output maxiter $maxiter outfile $tmpsol"
+
+firstcmd="$bas seed $seed"
+echo $firstcmd
+eval $firstcmd
+counter=1
+while true
+do
+  if test -e $output; then
+    echo "solution found!"
+    rm $tmpsol
+    exit 0
+  fi
+  if test $counter -gt $cycles; then
+    echo "no solution found (sorry)"
+    rm $tmpsol
+    exit 1
+  fi
+  for penalty in asymlow design asymhigh design
+  do
+    if test $penalty = asymlow; then
+      echo "emphasis on covering"
+    fi
+    if test $penalty = asymhigh; then
+      echo "emphasis on packing"
+    fi
+    if test $penalty = design; then
+      echo "symmetric penalty"
+    fi
+    seed=`expr $seed + 1`
+    cmd="$bas initsol read infile $tmpsol coverpenalty $penalty asymadd $asymadd seed $seed"
+    #echo $cmd
+    eval $cmd
+  done
+  counter=`expr $counter + 1`
+done

@@ -1,0 +1,10 @@
+\endgraf \tocnormaltype The header file {\fam \ttfam \eleventt brute.h}\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 1}\hss }\endgraf 
+\endgraf \tocnormaltype possolve\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 2}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptpossolve\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 3}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptsubtract\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 4}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptpruneqn --- remove equations\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 5}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptvarprune --- remove variables\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 6}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptOutput routine --- puteqns\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 6}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptdivideeqns\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 7}\hss }\endgraf 
+\endgraf \toccodetype \hskip 12ptgcd\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 8}\hss }\endgraf 
+\endgraf \tocnormaltype solve --- brute force recursion\penalty \@M \leaders \hbox to1pc{\hss .\hss } \hskip 24pt plus1fill\hbox to\z@ {\hbox to18pt{\hfill 8}\hss }\endgraf 

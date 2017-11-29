@@ -1,0 +1,127 @@
+# please make sure that
+#
+#
+# DISCRETA_HOME
+# MESA_HOME
+# MOTIF_HOME
+# DISCRETA_CC
+# ANSI_CC
+#
+# are set properly
+
+
+	set hostname=`hostname`
+	set uname_s=`uname -s`
+	set uname_m=`uname -m`
+	set uname_r=`uname -r`
+	
+	setenv DISCRETA_HOME ~/DISCRETA.2000
+	#setenv DISCRETA_HOME ~/HOME/DISCRETA
+
+	setenv MESA_HOME ~/SOFT/MESA
+	#setenv MESA_HOME /usr/local
+	
+	setenv MOTIF_HOME /usr/X11R6
+	#setenv MOTIF_HOME ~/SOFT/lesstif
+
+	setenv DISCRETA_ARCH "$uname_s-$uname_m-$uname_r"
+	
+	setenv MCKAYCC cc
+	setenv MCKAYOPTIONS -O2
+
+	setenv XDROOT /usr/local/xd
+	# setenv XDROOT /home/btm2xk/anton/XD
+	
+	setenv LM_LICENSE_FILE /usr/axiom/share/license/axiomDemo.lic
+	
+	if ($uname_s == Linux) then
+		setenv DISCRETA_XLIBS_SPECIAL ""
+		if ($uname_r == 2.2.10) then
+			setenv MESA_HOME /usr/local
+			setenv MOTIF_HOME /usr/X11R6
+		endif
+		if ($uname_r == 2.2.5-15smp) then
+			#setenv MESA_HOME ~/SOFT/MESA
+
+			#setenv MOTIF_HOME /usr/X11R6
+			setenv MOTIF_HOME ~/SOFT/lesstif
+			#setenv DISCRETA_XLIBS_SPECIAL "-L/usr/i486-linux-libc5/lib"
+			setenv DISCRETA_XLIBS_SPECIAL "-L/usr/i386-glibc20-linux/lib/"
+		endif
+		if ($uname_r == 2.0.35) then
+			setenv MESA_HOME ~/SOFT/MESA
+			setenv MOTIF_HOME /usr/X11R6
+			#setenv MOTIF_HOME ~/SOFT/lesstif
+			setenv DISCRETA_XLIBS_SPECIAL "-static "
+		endif
+		
+		setenv DISCRETA_XLIBS "$DISCRETA_XLIBS_SPECIAL -L$MOTIF_HOME/lib -L$MESA_HOME/lib -lXm -lXt -lX11 -lXext -lXpm -lSM -lICE -lm"   
+		setenv DISCRETA_XFLAGS "-I$MOTIF_HOME/include"
+		setenv DISCRETA_CFLAGS "-Wall -DSYSTEMUNIX -I$DISCRETA_HOME"
+		setenv LLLOPTIONS '-O3 -Wall -funroll-loops -funroll-all-loops -fomit-frame-pointer -finline-functions'
+		setenv DISCRETA_CC gcc
+		setenv ANSICC cc
+	endif
+	if ($uname_s == OSF1) then
+
+		setenv MESA_HOME /usr/local
+		setenv MOTIF_HOME ~/SOFT/lesstif
+
+		setenv DISCRETA_XLIBS '-lXm -lXt -lX11 -lXext -ldnet_stub -lm'
+		setenv DISCRETA_XFLAGS "-I$MOTIF_HOME/include"
+		setenv DISCRETA_CFLAGS "-O2 -DSYSTEMUNIX -DNO_XMSTRINGS -I$DISCRETA_HOME"
+		setenv LLLOPTIONS '-newc -O4 -fast -inline speed'
+		setenv DISCRETA_CC cxx
+		setenv ANSICC cc
+		setenv EDITOR emacs
+			# vi does not work here !?
+	endif
+	if ($uname_s == IRIX) then
+		setenv DISCRETA_XLIBS '-lXm -lXt -lX11 -lXext -lm'   
+		setenv DISCRETA_XFLAGS "-I$MOTIF_HOME/include"
+		setenv DISCRETA_CFLAGS "-O2 -DSYSTEMUNIX -woff 3262 -I$DISCRETA_HOME"
+			# add optimization -O or -O2 if you want !
+		setenv LLLOPTIONS ' '
+		setenv DISCRETA_CC CC
+		setenv ANSICC cc
+	endif
+	if ($uname_s == SunOS) then
+		setenv LM_LICENSE_FILE /etc/opt/licenses/licenses_combined
+
+                #setenv DISCRETA_XLIBS '-L/nfs/alpha/home2/ugah197/SUNWmotif/lib -L/usr/openwin/lib -lXm -lXt -lX11 -lXext -lm  -lgen'
+                setenv DISCRETA_XLIBS '-L/opt/SUNWmotif/lib -L/usr/openwin/lib -lXm -lXt -lX11 -lXext -lm  -lgen'
+		setenv DISCRETA_XFLAGS "-I/usr/openwin/share/include -I/opt/SUNWmotif/share/include -I$MOTIF_HOME/include"
+                setenv DISCRETA_CFLAGS "-DSYSTEMUNIX -I$DISCRETA_HOME"
+                setenv LLLOPTIONS ' '
+                #setenv DISCRETA_CC g++
+                setenv DISCRETA_CC CC
+		setenv ANSICC cc
+                setenv LD_LIBRARY_PATH /opt/SUNWmotif/lib:/usr/openwin/lib
+                set path=( /usr/ccs/bin /opt/SUNWspro/bin $path )
+                setenv MCKAYOPTIONS ' '
+                setenv MCKAYOPTIONS -O1
+	endif
+	if ($uname_s == AIX) then
+		setenv DISCRETA_XLIBS '-lXm -lXt -lX11 -lXext -lm'   
+		setenv DISCRETA_XFLAGS "-I$MOTIF_HOME/include"
+		setenv DISCRETA_CFLAGS "-DSYSTEMUNIX -I$DISCRETA_HOME"
+			# add optimization -O or -O2 if you want !
+		setenv LLLOPTIONS '-O2'
+		setenv DISCRETA_CC xlC
+		setenv ANSICC cc
+	endif
+	if ($uname_s == HP-UX) then
+		setenv DISCRETA_XLIBS '-lXm -lXt -lX11 -lXext -lm'   
+		setenv DISCRETA_XFLAGS "-I$MOTIF_HOME/include"
+		setenv DISCRETA_CFLAGS "-DSYSTEMUNIX -I$DISCRETA_HOME"
+			# add optimization -O or -O2 if you want !
+		setenv LLLOPTIONS '-O2'
+		setenv DISCRETA_CC g++
+		setenv ANSICC cc
+	endif
+	set path=( . ~/BIN $DISCRETA_HOME/obj/$DISCRETA_ARCH/BIN $DISCRETA_HOME/TEST ~/BIN/$DISCRETA_ARCH $XDROOT/bin /usr/local/bin $path )
+	#setenv XFILESEARCHPATH ${DISCRETA_HOME}/lib/app-defaults/%N
+	setenv XUSERFILESEARCHPATH ${DISCRETA_HOME}/lib/app-defaults/%N
+	#setenv XUSERFILESEARCHPATH ${XUSERFILESEARCHPATH}:${DISCRETA_HOME}/lib/app-defaults/%N
+
+

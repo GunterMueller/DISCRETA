@@ -1,0 +1,6 @@
+*background:			wheat1
+*XmPushButton.background:	wheat2
+*menuBar.background:		wheat2
+*XmCascadeButton.background:	wheat2
+*XmFileSelectionBox*background:	LightSkyBlue
+*XmMessageBox*background:	Red

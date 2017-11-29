@@ -1,0 +1,6 @@
+#!/bin/sh
+discreta2wclique 1 $1
+wclique infile 
+wclique2discreta 1 $1
+rm infile outfile
+echo "finished."

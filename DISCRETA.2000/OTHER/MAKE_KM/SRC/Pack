@@ -1,0 +1,67 @@
+#!/bin/sh
+
+if test "$#" -eq 0; then
+  echo "For instructions to use: see file usage.txt."
+  exit 1
+fi
+
+# some options generate define's in perm.h, some are passed to
+# pack.bin directly
+
+len=$1
+kPar=$2
+tPar=$3
+
+cat /dev/null > perm.h
+
+export CW_LENGTH
+CW_LENGTH=$1
+
+PERM_GEN_COUNT=0
+echo "#define PERMUTE(X) {\\" >perm2.h
+
+shift 3 # discard the options that have been processed
+while [ ! -z "$1" ]; do
+  case $1 in
+  -o)   shift # all the rest of the options are meant for pack.bin directly
+	break
+	;;
+  *)	# assume that this option is a permutation generation command
+	echo "permtable[${PERM_GEN_COUNT}]=\\" >>perm2.h
+	$1 >>perm2.h
+	case "$?" in
+	0)	# ok
+		;;
+	*)	echo "Error: Unable to execute permutation command: $1"
+		exit
+		;;
+	esac
+	echo ";\\" >>perm2.h
+	PERM_GEN_COUNT=`expr ${PERM_GEN_COUNT} + 1`
+	;;
+  esac
+  shift
+done
+echo "}" >>perm2.h
+cat perm2.h >>perm.h
+
+case "${PERM_GEN_COUNT}" in
+"1")	echo "#define SINGLE_PERMUTATION" >>perm.h
+	;;
+*)	echo "#define MULTIPLE_PERMUTATION" >>perm.h
+esac
+echo "#define PERM_GEN_COUNT ${PERM_GEN_COUNT}" >>perm.h
+
+# make the binary program
+
+make pack.bin 
+
+# and run it if no error occurred
+
+case "$?" in
+0)	pack.bin ${len} ${kPar} ${tPar} $*
+	;;
+*)	echo "Error: Terminating."
+	exit
+	;;
+esac

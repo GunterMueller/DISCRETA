@@ -1,0 +1,219 @@
+% d.tex
+%
+% Anton Betten 
+%
+% September 1998
+%
+% Bayreuth
+%
+%
+
+\documentclass[10pt,a4paper]{book} 
+
+
+
+%
+%\usepackage[german]{babel}
+%\usepackage[dvips]{epsfig}
+%\usepackage{cours11, cours}
+%\usepackage{fancyheadings}
+%\usepackage{amstex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{epsf}
+%\usepackage{supertabular}
+%\usepackage{wrapfig}
+%\usepackage{blackbrd}
+\usepackage{epic,eepic}
+\usepackage{rotating}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{makeidx} % additional command see
+\usepackage{epsfig}
+%\usepackage{amsmath,amsfonts} 
+
+%\usepackage{bibgerm}
+
+\usepackage{mathtime}
+%\usepackage{bm}
+\usepackage{times}
+%\usepackage{pifont}
+
+
+\input macro.tex
+
+\makeindex
+
+\begin{document} 
+
+{\allowdisplaybreaks%
+
+
+\bibliographystyle{plain}
+%\bibliographystyle{gerplain}
+%\makeindex
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+\title{\vspace*{-15mm}
+DISCRETA\\
+programming manual\\
+%\vspace*{1cm}
+%\epsfxsize=70mm
+%\epsffile{MP/PG_3_2/PG_3_2_8.1}
+}
+\author{
+Anton Betten \\
+Fakult\"at f\"ur Mathematik und Physik\\
+Universit\"at Bayreuth\\ 
+D-95440 Bayreuth\\
+{\tt Anton.Betten\symbol{64}uni-bayreuth.de} 
+}%end author
+
+%\date{}
+
+
+\pagenumbering{roman}
+\maketitle
+
+\thispagestyle{empty}\phantom{Seite2}\clearpage%
+%\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+
+\tableofcontents
+%\listofsymbols
+
+%\chapter{Introduction}
+
+%\begin{abstract}
+%\end{abstract}
+
+%\begin{figure}
+%\begin{center}
+%\epsfxsize=11cm
+%\epsffile{./g_t2_k3.ps}
+%\end{center}
+%\caption{\label{g4lattice}The graphs on 4 points as a poset of orbits}
+%\end{figure}
+
+\chapter{Basic Routines, Files, I/O etc.}
+\pagenumbering{arabic}
+
+\input ../obj/TEX/discreta.h.tex
+\input ../obj/TEX/discreta.C.tex
+\input ../obj/TEX/os.C.tex
+\input ../obj/TEX/iof.C.tex
+\input ../obj/TEX/nu.C.tex
+
+
+\chapter{Some Scalar Data Types}
+\input ../obj/TEX/in1.C.tex
+
+\chapter{Permutations and Partitions}
+\input ../obj/TEX/perm.C.tex
+\input ../obj/TEX/perm2.C.tex
+\input ../obj/TEX/part.C.tex
+
+\chapter{Vectors, Lists and Matrices}
+\input ../obj/TEX/vec.C.tex
+\input ../obj/TEX/ma.C.tex
+
+\chapter{Permutation Groups}
+\input ../obj/TEX/perm_grp.C.tex
+\input ../obj/TEX/perm_grp2.C.tex
+\input ../obj/TEX/fga.C.tex
+\input ../obj/TEX/lb.C.tex
+\input ../obj/TEX/lb_base_change.C.tex
+
+\chapter{Polynomials}
+\input ../obj/TEX/poly.C.tex
+\input ../obj/TEX/mon.C.tex
+\input ../obj/TEX/unip.C.tex
+
+\chapter{Finite Fields}
+
+\input ../obj/TEX/gfq.h.tex
+\input ../obj/TEX/gfq_zech.C.tex
+\input ../obj/TEX/gfq_nb.C.tex
+\input ../obj/TEX/singer.C.tex
+
+\chapter{Linear Groups}
+
+\input ../obj/TEX/perm_rep.C.tex
+\input ../obj/TEX/gfq_sz.C.tex
+\input ../obj/TEX/gfq_psu.C.tex
+
+
+%\input ../obj/TEX/kontext.C.tex
+
+\chapter{Linear Codes}
+\input ../obj/TEX/bch.C.tex
+\input ../obj/TEX/mindist.C.tex
+
+%\chapter{Databases}
+
+
+\chapter{Double Cosets and Designs}
+\input ../obj/TEX/ladder_info.C.tex
+\input ../obj/TEX/ladder.C.tex
+\input ../obj/TEX/ladder2.C.tex
+\input ../obj/TEX/kramer_mesner.C.tex
+\input ../obj/TEX/plesken.C.tex
+\input ../obj/TEX/intersection.C.tex
+\input ../obj/TEX/intersection_aijk.C.tex
+\input ../obj/TEX/parameter.C.tex
+\input ../obj/TEX/report.C.tex
+\input ../obj/TEX/graphical.C.tex
+\input ../obj/TEX/mathieu.C.tex
+\input ../obj/TEX/dc_draw.C.tex
+\input ../obj/TEX/solid.C.tex
+
+%\chapter{Solvable Groups}
+%\input ../obj/TEX/fg.C.tex
+%\input ../obj/TEX/fg_table.C.tex
+%\input ../obj/TEX/fg_iso.C.tex
+%\input ../obj/TEX/fg_syl.C.tex
+%\input ../obj/TEX/fg_ext.C.tex
+%\input ../obj/TEX/fg_color.C.tex
+%\input ../obj/TEX/fg_direct.C.tex
+%\input ../obj/TEX/aut.C.tex
+%\input ../obj/TEX/aut_util.C.tex
+%\input ../obj/TEX/aut_init.C.tex
+%\input ../obj/TEX/aut_grid.C.tex
+%\input ../obj/TEX/aut_dimino.C.tex
+%\input ../obj/TEX/cf.C.tex
+%\input ../obj/TEX/cl_rep.C.tex
+%%\input ../obj/TEX/cl_rep2.C.tex
+%\input ../obj/TEX/gt_canon.C.tex
+%\input ../obj/TEX/gt_canon_dimino.C.tex
+%\input ../obj/TEX/gt_canon_grid.C.tex
+%\input ../obj/TEX/gt_col_util.C.tex
+%\input ../obj/TEX/gt_color.C.tex
+
+
+\chapter{Finite Incidence Geometries}
+\input ../obj/TEX/ma_geo.C.tex
+
+\chapter{Graphics}
+\input ../obj/TEX/vdi.C.tex
+
+
+
+%\bibliographystyle{gerplain}% wird oben eingestellt
+\bibliography{../../TEX.99/MY_BIBLIOGRAPHY/anton}
+% ACHTUNG: nicht vergessen:
+% die Zeile
+%\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+% muss per Hand in d.bbl eingefuegt werden !
+% nach \begin{thebibliography}{100}
+
+
+%\addcontentsline{toc}{chapter}{Index}
+%\input{d.ind}
+
+
+}% allowdisplaybreaks
+
+\end{document}
+
+

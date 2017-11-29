@@ -1,0 +1,12 @@
+molgendb
+00 8192 0 0 0
+I 9  Formel     0 0 0      Summenformel
+I 1  #C         1 0 0      Anzahl C-Atome
+I 1  #O         1 0 0      Anzahl O-Atome
+I 1  #N         1 0 0      Anzahl N-Atome
+I 1  #BR        1 0 0      Anzahl Br-Atome
+I 1  #CL        1 0 0      Anzahl Cl-Atome
+I 1  #I         1 0 0      Anzahl I-Atome
+I 1  #F         1 0 0      Anzahl F-Atome
+I 1  #H         1 0 0      Anzahl H-Atome
+I 9  Name       0 0 0      Molekuelname
